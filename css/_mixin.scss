@@ -1,0 +1,38 @@
+// // mixin - メディアクエリ
+// $breakpoint-sm: 400px !default;
+// $breakpoint-md: 768px !default;
+// $breakpoint-lg: 1064px !default;
+// $breakpoint-xl: 1280px !default;
+// $breakpoints: (
+//   'sm': 'screen and (min-width: 400px)',
+//   'md': 'screen and (min-width: 768px)',
+//   'lg': 'screen and (min-width: 1064px)',
+//   'xl': 'screen and (min-width: 1280px)',
+//   ) !default;
+// @mixin mq($breakpoint: md) {
+//   @media #{map-get($breakpoints, $breakpoint)} {
+//     @content;
+//   }
+// }
+
+// mixin - line-height相殺
+@mixin del-space($line-height) {
+  &::before,
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+  }
+  &::before {
+    margin-top: calc((1 - #{$line-height}) * .5em);
+  }
+  &::after {
+    margin-bottom: calc((1 - #{$line-height}) * .5em);
+  }
+}
+
+// mixin - font-size
+@function rem($px) {
+  @return ($px / 16) * 1rem;
+}
