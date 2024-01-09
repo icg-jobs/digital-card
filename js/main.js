@@ -29,7 +29,7 @@ function init() {
 		for(var canvasIndex in canvasList) {
         var canvas = canvasList[canvasIndex];
         canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
-        canvas.height = 300;//波の高さ
+        canvas.height = 250;//波の高さ
         canvas.contextCache = canvas.getContext("2d");
     }
     // 共通の更新処理呼び出し
@@ -46,7 +46,7 @@ function update() {
     info.seconds = info.seconds + .014;
     info.t = info.seconds*Math.PI;
     // 自身の再起呼び出し
-    setTimeout(update, 35);
+    setTimeout(update, 40);
 }
 
 /**

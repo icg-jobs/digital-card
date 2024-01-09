@@ -536,7 +536,7 @@ h3 {
 
 .shape2 {
   width: 300px; /*横幅*/
-  height: 200px; /*縦幅*/
+  height: 250px; /*縦幅*/
   background: #B1DEEE; /*背景色*/
   position: absolute;
   left: 10px;
@@ -573,7 +573,7 @@ h3 {
   height: 300px;
   background: #C2C4E2;
   position: absolute;
-  left: 290px;
+  left: 100px;
   top: 1130px;
   z-index: -1;
   animation: fluidrotate 20s ease 0s infinite; /*アニメーションの設定*/
@@ -684,10 +684,14 @@ body header .container .flex-wrapper ul li a {
   letter-spacing: 0.025rem;
   font-weight: 700;
 }
+body header .container .flex-wrapper ul .btn-wrapper-pc {
+  display: none;
+}
 body header .container .btn-wrapper {
   color: var(--color-accentA);
-  border-radius: 60px;
+  border-radius: 200px;
   border: 1px solid var(--color-accentA);
+  box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
   background: #FFF;
   padding: 8px;
   width: -moz-fit-content;
@@ -794,7 +798,7 @@ body main .feature .container .text-box h3 span {
   font-weight: 500;
 }
 body main .feature .container .text-box p {
-  line-height: 2rem;
+  line-height: 2;
   letter-spacing: 0.1rem;
 }
 body main .feature .container .text-box .sns-icon {
@@ -821,10 +825,10 @@ body main .problem .container h3 {
 body main .problem .container .inner-box {
   background-color: #FFF;
   padding: 0 16px 40px 16px;
-  margin-bottom: 24px;
+  margin-bottom: 64px;
 }
 body main .problem .container .inner-box img {
-  width: 300px;
+  width: 100%;
   display: block;
   margin: 0 auto;
   padding: 40px;
@@ -844,7 +848,7 @@ body main .problem p:last-child {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.0625rem;
-  padding: 40px 0 64px 0;
+  padding-bottom: 64px;
 }
 body main .how {
   margin-top: 32px;
@@ -881,6 +885,9 @@ body main .about {
   padding-top: 32px;
   background-color: var(--color-back);
 }
+body main .about .container-pc {
+  display: none;
+}
 body main .about .container {
   background-image: url(../img/About.svg);
   background-size: 300px auto;
@@ -893,35 +900,39 @@ body main .about .container .flex-wrapper .inner-flex-box .inner-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  -moz-column-gap: 4px;
-       column-gap: 4px;
-  padding: 24px 0;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  padding-bottom: 40px;
 }
 body main .about .container .flex-wrapper .inner-flex-box .inner-icon img {
   width: 30px;
   margin: 0;
 }
-body main .about .container .flex-wrapper .inner-flex-box p {
+body main .about .container .flex-wrapper img:nth-child(2) {
+  width: 70%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: block;
+  mix-blend-mode: multiply;
+  padding-bottom: 24px;
+}
+body main .about .container .flex-wrapper p {
   color: var(--color-subtitle-text);
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.0625rem;
-  line-height: 2.5rem;
+  line-height: 2;
+  text-align: center;
+  padding-top: 24px;
 }
-body main .about .container .flex-wrapper .inner-flex-box .inner-text {
+body main .about .container .flex-wrapper .inner-text {
   color: var(--color-inner-text);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0.0625rem;
-  line-height: 2.5rem;
+  line-height: 2;
   text-align: left;
-}
-body main .about .container .flex-wrapper img:nth-child(2) {
-  width: 250px;
-  margin: 0 auto;
-  display: block;
-  mix-blend-mode: multiply;
-  padding-top: 40px;
+  padding-top: 16px;
 }
 body main .about .container .flex-wrapper:last-child {
   padding-bottom: 64px;
@@ -933,9 +944,9 @@ body main .about .container .flex-wrapper:last-child .inner-flex-box .inner-icon
   display: flex;
   align-items: center;
   justify-content: center;
-  -moz-column-gap: 4px;
-       column-gap: 4px;
-  padding: 24px 0;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  padding-bottom: 40px;
 }
 body main .about .container .flex-wrapper:last-child .inner-flex-box .inner-icon img {
   width: 30px;
@@ -952,7 +963,7 @@ body main .about .container .flex-wrapper:last-child .text-box p {
   letter-spacing: 0.0625rem;
   line-height: 2.5rem;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 24px;
 }
 body main .about .container .flex-wrapper:last-child .text-box .inner-text-box {
   display: flex;
@@ -981,43 +992,67 @@ body main .order .container {
   background-position: left 0;
 }
 body main .order .flex-wrapper form .inner-flex-box {
+  width: 100%;
   display: table;
   table-layout: fixed;
   margin-bottom: 24px;
-  width: 100%;
 }
 body main .order .flex-wrapper form .inner-flex-box dt {
   letter-spacing: 0.125rem;
   display: table-cell;
-  width: 80%;
   font-size: 0.875rem;
+  width: 40%;
 }
 body main .order .flex-wrapper form .inner-flex-box dd {
-  display: table-cell;
-  width: 100%;
+  margin-left: 4px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd .radio:nth-child(2) {
   margin: 1.5rem 0;
 }
 body main .order .flex-wrapper form .inner-flex-box dd input, body main .order .flex-wrapper form .inner-flex-box dd select {
-  border: 1px solid #AAAAAA;
-  border-radius: 10px;
-  padding: 10px;
+  border: 0.5px solid #AAAAAA;
+  border-radius: 5px;
+  padding: 16px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd .name1 {
   margin-bottom: 16px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd label {
   line-height: 2;
+  letter-spacing: 2px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd label a {
   color: var(--color-accentA);
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd input {
+  width: 100%;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd {
+  white-space: nowrap;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input {
+  width: 80px;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd {
+  white-space: nowrap;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
+  width: 60px;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(9) dd {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
 body main .order .flex-wrapper form .submit-btn {
   margin: 0 auto 64px auto;
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 200px;
   border: 1px solid var(--color-accentA);
   background: #FFF;
   padding: 8px 16px;
@@ -1026,6 +1061,7 @@ body main .order .flex-wrapper form .submit-btn {
   box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
 }
 body main .order .flex-wrapper form .submit-btn input {
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.625rem;
   color: var(--color-accentA);
@@ -1145,7 +1181,7 @@ body main .question .container .read-more .txt-hide {
   display: none;
 }
 body main .question .container .read-more button.more {
-  font-size: 1.5rem;
+  font-size: 0.875rem;
   letter-spacing: 2px;
   white-space: nowrap;
   font-weight: 500;
@@ -1220,7 +1256,106 @@ body footer .container small {
   padding-top: 24px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
+  .shape1 {
+    width: 600px; /*横幅*/
+    height: 600px; /*縦幅*/
+    background: #A1CBED; /*背景色*/
+    position: absolute;
+    right: 10px;
+    top: 500px;
+    z-index: -1;
+    animation: fluidrotate 20s ease 0s infinite; /*アニメーションの設定*/
+  }
+  @keyframes fluidrotate {
+    0%, 100% {
+      border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    14% {
+      border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    28% {
+      border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    42% {
+      border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    56% {
+      border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    70% {
+      border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    84% {
+      border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+  }
+  .shape2 {
+    width: 300px; /*横幅*/
+    height: 250px; /*縦幅*/
+    background: #B1DEEE; /*背景色*/
+    position: absolute;
+    left: 10px;
+    top: 850px;
+    z-index: -1;
+    animation: fluidrotate 20s ease 0s infinite; /*アニメーションの設定*/
+  }
+  @keyframes fluidrotate {
+    0%, 100% {
+      border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    14% {
+      border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    28% {
+      border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    42% {
+      border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    56% {
+      border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    70% {
+      border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    84% {
+      border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+  }
+  .shape3 {
+    width: 300px;
+    height: 300px;
+    background: #C2C4E2;
+    position: absolute;
+    left: 1000px;
+    top: 1300px;
+    z-index: -1;
+    animation: fluidrotate 20s ease 0s infinite; /*アニメーションの設定*/
+  }
+  @keyframes fluidrotate {
+    0%, 100% {
+      border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    14% {
+      border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    28% {
+      border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    42% {
+      border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    56% {
+      border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    70% {
+      border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    84% {
+      border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+  }
   .container {
     padding: 195px 180px;
     background-repeat: no-repeat;
@@ -1232,12 +1367,12 @@ body footer .container small {
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 0.25rem;
-    padding-bottom: 195px;
+    padding-bottom: 128px;
   }
   h3 {
     font-size: 2rem;
     font-weight: 600;
-    letter-spacing: 0.0625rem;
+    line-height: 2;
   }
   body {
     position: relative;
@@ -1285,29 +1420,35 @@ body footer .container small {
   }
   body header .container .flex-wrapper ul li a {
     color: var(--color-subtitle-text);
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     letter-spacing: 0.025rem;
     font-weight: 700;
   }
-  body header .container .btn-wrapper {
+  body header .container .flex-wrapper ul .btn-wrapper-pc {
+    display: block;
     color: var(--color-accentA);
-    border-radius: 60px;
-    border: 1px solid var(--color-accentA);
+    border-radius: 100px;
+    border: 2px solid var(--color-accentA);
+    box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
     background: #FFF;
-    padding: 8px;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-top: 8px;
+    padding: 12px 24px;
+    margin-left: 0;
+    margin-top: 0;
   }
-  body header .container .btn-wrapper form {
+  body header .container .flex-wrapper ul .btn-wrapper-pc form {
     display: flex;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
   }
-  body header .container .btn-wrapper form input {
-    font-size: 0.625rem;
-    font-weight: 700;
+  body header .container .flex-wrapper ul .btn-wrapper-pc form input {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  body header .container .flex-wrapper ul .btn-wrapper-pc form img {
+    width: 10px;
+  }
+  body header .container .btn-wrapper {
+    display: none;
   }
   body main .kv-pc {
     display: block;
@@ -1367,50 +1508,48 @@ body footer .container small {
     background-position: 30% -20%;
   }
   body main .feature .container .sub-container {
-    max-width: 800px;
+    max-width: 1080px;
     margin: 0 auto;
   }
-  body main .feature .container .sub-container .pc-wrapper, body main .feature .container .sub-container .pc-wrapper2 {
+  body main .feature .container .sub-container .pc-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 12px;
     background: #FFF;
     box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
-    padding: 40px;
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    padding: 24px;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
   }
-  body main .feature .container .sub-container .pc-wrapper .feature1, body main .feature .container .sub-container .pc-wrapper .feature3, body main .feature .container .sub-container .pc-wrapper2 .feature1, body main .feature .container .sub-container .pc-wrapper2 .feature3 {
-    width: 300px;
+  body main .feature .container .sub-container .pc-wrapper .feature1, body main .feature .container .sub-container .pc-wrapper .feature3 {
+    width: 350px;
     margin: 0;
-    margin-left: calc(60% - 40vw);
+    margin-left: calc(60% - 45vw);
   }
-  body main .feature .container .sub-container .pc-wrapper .feature2, body main .feature .container .sub-container .pc-wrapper .feature4, body main .feature .container .sub-container .pc-wrapper2 .feature2, body main .feature .container .sub-container .pc-wrapper2 .feature4 {
-    width: 300px;
-    margin: 0;
-    margin-right: calc(60% - 40vw);
-  }
-  body main .feature .container .sub-container .pc-wrapper .text-box, body main .feature .container .sub-container .pc-wrapper2 .text-box {
+  body main .feature .container .sub-container .pc-wrapper .text-box {
     position: relative;
     box-shadow: none;
     padding: 0;
+    width: 60%;
   }
-  body main .feature .container .sub-container .pc-wrapper .text-box h3, body main .feature .container .sub-container .pc-wrapper2 .text-box h3 {
+  body main .feature .container .sub-container .pc-wrapper .text-box h3 {
     color: var(--color-subtitle-text);
     padding-bottom: 24px;
   }
-  body main .feature .container .sub-container .pc-wrapper .text-box h3 span, body main .feature .container .sub-container .pc-wrapper2 .text-box h3 span {
+  body main .feature .container .sub-container .pc-wrapper .text-box h3 span {
+    font-size: 1.5rem;
     color: #CCCCCC;
     font-weight: 500;
   }
-  body main .feature .container .sub-container .pc-wrapper .text-box p, body main .feature .container .sub-container .pc-wrapper2 .text-box p {
-    line-height: 1.5rem;
+  body main .feature .container .sub-container .pc-wrapper .text-box p {
+    font-size: 1.125rem;
+    line-height: 2;
     letter-spacing: 0.1875rem;
   }
-  body main .feature .container .sub-container .pc-wrapper .text-box .sns-icon, body main .feature .container .sub-container .pc-wrapper2 .text-box .sns-icon {
+  body main .feature .container .sub-container .pc-wrapper .text-box .sns-icon {
     display: block;
-    width: 500px;
+    width: 300px;
     padding-top: 40px;
     margin: 0;
   }
@@ -1422,12 +1561,43 @@ body footer .container small {
     background: #FFF;
     box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
     padding: 24px;
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
     flex-direction: row-reverse;
   }
+  body main .feature .container .sub-container .pc-wrapper2 .feature2, body main .feature .container .sub-container .pc-wrapper2 .feature4 {
+    width: 350px;
+    margin: 0;
+    margin-top: calc(60% - 55vw);
+  }
+  body main .feature .container .sub-container .pc-wrapper2 .text-box {
+    position: relative;
+    box-shadow: none;
+    padding: 0;
+    width: 60%;
+  }
+  body main .feature .container .sub-container .pc-wrapper2 .text-box h3 {
+    color: var(--color-subtitle-text);
+    padding-bottom: 24px;
+  }
+  body main .feature .container .sub-container .pc-wrapper2 .text-box h3 span {
+    font-size: 1.5rem;
+    color: #CCCCCC;
+    font-weight: 500;
+  }
+  body main .feature .container .sub-container .pc-wrapper2 .text-box p {
+    font-size: 1.125rem;
+    line-height: 2;
+    letter-spacing: 0.1875rem;
+  }
+  body main .feature .container .sub-container .pc-wrapper2 .text-box .sns-icon {
+    display: block;
+    max-width: 100%;
+    padding-top: 40px;
+    margin: 0;
+  }
   body main .feature .container .sub-container .sub {
-    margin: 40px 0;
+    margin: 128px 0;
   }
   body main .problem {
     margin-top: 0;
@@ -1459,7 +1629,7 @@ body footer .container small {
   }
   body main .problem .container .pc-flex .flex-wrapper .inner-box {
     background-color: #FFF;
-    padding: 0 16px 40px 16px;
+    padding: 40px 40px 40px 40px;
     height: 400px;
     margin-bottom: 0;
   }
@@ -1471,8 +1641,8 @@ body footer .container small {
   }
   body main .problem .container .pc-flex .flex-wrapper .inner-box p {
     color: var(--color-inner-text);
-    font-size: 1rem;
-    line-height: 2rem;
+    font-size: 1.125rem;
+    line-height: 2;
     font-weight: 400;
     letter-spacing: 0.1rem;
     padding: 0;
@@ -1485,7 +1655,10 @@ body footer .container small {
     font-weight: 600;
     letter-spacing: 0.1875rem;
     padding: 128px 0 0 0;
-    line-height: 3rem;
+    line-height: 2;
+  }
+  body main .problem .container p:last-child .br-pc {
+    display: none;
   }
   body main .how {
     margin-top: 0;
@@ -1532,11 +1705,14 @@ body footer .container small {
     background-color: var(--color-back);
   }
   body main .about .container {
+    display: none;
+  }
+  body main .about .container-pc {
     background-image: url(../img/About.svg);
     background-size: 50% 40%;
     background-position: 30% -20%;
   }
-  body main .about .container .flex-wrapper {
+  body main .about .container-pc .flex-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1546,28 +1722,30 @@ body footer .container small {
     max-width: 1000px;
     margin: 0 auto;
   }
-  body main .about .container .flex-wrapper .inner-flex-box .inner-icon {
+  body main .about .container-pc .flex-wrapper .inner-flex-box .inner-icon {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
     padding: 40px 0;
   }
-  body main .about .container .flex-wrapper .inner-flex-box .inner-icon img {
+  body main .about .container-pc .flex-wrapper .inner-flex-box .inner-icon img {
     width: 30px;
     margin: 0;
   }
-  body main .about .container .flex-wrapper .inner-flex-box p {
+  body main .about .container-pc .flex-wrapper .inner-flex-box p {
     color: var(--color-subtitle-text);
+    width: 100%;
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 0.0625rem;
     padding-bottom: 24px;
-    line-height: 3.5rem;
+    line-height: 2;
     text-align: left;
+    margin-left: 54px;
   }
-  body main .about .container .flex-wrapper .inner-flex-box .inner-text {
+  body main .about .container-pc .flex-wrapper .inner-flex-box .inner-text {
     color: var(--color-inner-text);
     font-size: 1.125rem;
     font-weight: 500;
@@ -1575,58 +1753,58 @@ body footer .container small {
     line-height: 2.5rem;
     text-align: left;
   }
-  body main .about .container .flex-wrapper img {
+  body main .about .container-pc .flex-wrapper img {
     width: 250px;
     height: 100%;
     mix-blend-mode: multiply;
   }
-  body main .about .container .flex-wrapper:last-child {
+  body main .about .container-pc .flex-wrapper:last-child {
     padding: 0;
   }
-  body main .about .container .flex-wrapper:last-child .inner-flex-box img {
-    width: 300px;
+  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box img {
+    width: 540px;
     padding-bottom: 64px;
   }
-  body main .about .container .flex-wrapper:last-child .inner-flex-box .inner-icon {
+  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon {
     display: flex;
     align-items: center;
-    justify-content: center;
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    justify-content: flex-start;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
     padding: 24px 0;
   }
-  body main .about .container .flex-wrapper:last-child .inner-flex-box .inner-icon img {
+  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon img {
     width: 30px;
     margin: 0;
     padding: 0;
   }
-  body main .about .container .flex-wrapper:last-child .inner-flex-box .inner-icon h3 {
+  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon h3 {
     letter-spacing: 60px;
   }
-  body main .about .container .flex-wrapper:last-child .text-box p {
+  body main .about .container-pc .flex-wrapper:last-child .text-box p {
     color: var(--color-inner-text);
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.0625rem;
-    line-height: 2.5rem;
-    text-align: center;
+    line-height: 2;
+    text-align: left;
     padding-bottom: 40px;
   }
-  body main .about .container .flex-wrapper:last-child .text-box .inner-text-box {
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  body main .about .container .flex-wrapper:last-child .text-box .inner-text-box p {
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box p {
     text-align: center;
     font-weight: 600;
     letter-spacing: 0.25rem;
   }
-  body main .about .container .flex-wrapper:last-child .text-box .inner-text-box span:first-child {
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box span:first-child {
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 600;
   }
-  body main .about .container .flex-wrapper:last-child .text-box .inner-text-box span:last-child {
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box span:last-child {
     font-size: 3.75rem;
     font-weight: 800;
   }
@@ -1639,11 +1817,24 @@ body footer .container small {
     background-position: 30% -15%;
   }
   body main .order .flex-wrapper {
-    margin: 0 auto;
-    max-width: 1000px;
+    margin: 0 128px;
+    max-width: 1290px;
   }
   body main .order .flex-wrapper form .inner-flex-box {
     margin-bottom: 40px;
+    width: 100%;
+  }
+  body main .order .flex-wrapper form .inner-flex-box dt {
+    font-size: 1.125rem;
+    width: 20%;
+  }
+  body main .order .flex-wrapper form .inner-flex-box dd {
+    width: 80%;
+  }
+  body main .order .flex-wrapper form .inner-flex-box dd input, body main .order .flex-wrapper form .inner-flex-box dd select {
+    border: 0.5px solid #AAAAAA;
+    border-radius: 5px;
+    padding: 16px 24px;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) {
     display: flex;
@@ -1651,12 +1842,13 @@ body footer .container small {
     align-items: center;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dt {
-    width: 80%;
     letter-spacing: 0.125rem;
-    font-size: 0.875rem;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd {
     display: flex;
+    justify-content: flex-start;
+    -moz-column-gap: 80px;
+         column-gap: 80px;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd .radio {
     margin: 0;
@@ -1670,15 +1862,44 @@ body footer .container small {
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd label a {
     color: var(--color-accentA);
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) .name1 {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input {
+    width: 600px;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd {
+    display: initial;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input {
+    width: 200px;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd .name1 {
     margin-bottom: 0;
+    margin-right: 16px;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input {
+    width: 100px;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input {
+    width: 600px;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
+    width: 100px;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd input {
+    width: 400px;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(9) dd {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
   }
   body main .order .flex-wrapper form .submit-btn {
     padding: 16px 24px;
-    margin: 0 auto;
+    margin-left: 20%;
     border: 2px solid var(--color-accentA);
   }
   body main .order .flex-wrapper form .submit-btn input {
+    font-size: 1.125rem;
     font-weight: 500;
     letter-spacing: 24px;
     color: var(--color-accentA);
@@ -1836,7 +2057,7 @@ body footer .container small {
   body main .company .container .flex-wrapper .text-wrapper .inner-flex-wrapper dd {
     display: table-cell;
     width: 300px;
-    list-style: 2;
+    line-height: 2;
   }
   body footer {
     padding: 16px;
