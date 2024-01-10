@@ -442,6 +442,39 @@ body::-webkit-scrollbar { /*Google Chrome、Safariへの対応*/
   display: none;
 }
 
+/*========= waveを描画するエリア設定 ===============*/
+canvas {
+  position: fixed;
+  z-index: -999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotate(180deg);
+}
+
+/***************************************************
+card-animation
+**************************************************/
+.animation {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  width: 128px;
+}
+
+.card {
+  animation-name: poyopoyo;
+}
+
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
 .radio input[type=radio] {
   position: absolute;
   opacity: 0;
@@ -477,6 +510,31 @@ body::-webkit-scrollbar { /*Google Chrome、Safariへの対応*/
 }
 .radio input[type=radio] + .radio-label:empty:before {
   margin-right: 0;
+}
+
+/***************************************************
+main-ttl
+**************************************************/
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 2768.0087890625px;
+    stroke-dasharray: 2768.0087890625px;
+  }
+  100% {
+    stroke-dashoffset: 5536.017578125px;
+    stroke-dasharray: 2768.0087890625px;
+  }
+}
+@keyframes animate-svg-fill-1 {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: rgb(33, 66, 105);
+  }
+}
+.svg-elem-1 {
+  animation: animate-svg-stroke-1 2s ease-in-out 0s both, animate-svg-fill-1 2s ease-in-out 1.5s both;
 }
 
 .container {
@@ -639,15 +697,6 @@ h3 {
 body {
   position: relative;
 }
-body #waveCanvas {
-  position: absolute;
-  top: -300px;
-  z-index: -999;
-  left: -60px;
-  width: 3000px;
-  height: 500px;
-  rotate: 170deg;
-}
 body header {
   position: fixed;
   width: 100%;
@@ -734,7 +783,7 @@ body main .kv .container .main-wrapper1 .main-ttl {
   margin: 0 auto;
 }
 body main .kv .container .main-wrapper1 .card {
-  width: 15.625rem;
+  width: 60%;
   padding-top: 40px;
   margin: 0 auto;
   display: block;
@@ -756,6 +805,7 @@ body main .kv .container .main-wrapper2 .inner-box p {
   font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: 0.125rem;
+  padding: 0;
 }
 body main .kv .container .main-wrapper2 img {
   width: 12.5rem;
@@ -779,8 +829,9 @@ body main .feature .container {
   margin-bottom: 64px;
 }
 body main .feature .container .feature1, body main .feature .container .feature2, body main .feature .container .feature3, body main .feature .container .feature4 {
-  width: 12.5rem;
   display: block;
+  max-width: 250px;
+  width: 70%;
   margin: 40px auto -16px auto;
 }
 body main .feature .container .text-box {
@@ -793,7 +844,7 @@ body main .feature .container .text-box h3 {
   color: var(--color-subtitle-text);
   padding-bottom: 24px;
 }
-body main .feature .container .text-box h3 span {
+body main .feature .container .text-box h3 .sub-ttl {
   color: #CCCCCC;
   font-weight: 500;
 }
@@ -804,6 +855,7 @@ body main .feature .container .text-box p {
 body main .feature .container .text-box .sns-icon {
   display: block;
   width: 100%;
+  max-width: 350px;
   margin: 24px auto 0 auto;
 }
 body main .problem {
@@ -829,6 +881,7 @@ body main .problem .container .inner-box {
 }
 body main .problem .container .inner-box img {
   width: 100%;
+  max-width: 350px;
   display: block;
   margin: 0 auto;
   padding: 40px;
@@ -995,16 +1048,15 @@ body main .order .flex-wrapper form .inner-flex-box {
   width: 100%;
   display: table;
   table-layout: fixed;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
 }
 body main .order .flex-wrapper form .inner-flex-box dt {
   letter-spacing: 0.125rem;
   display: table-cell;
   font-size: 0.875rem;
-  width: 40%;
 }
 body main .order .flex-wrapper form .inner-flex-box dd {
-  margin-left: 4px;
+  margin-left: 0;
 }
 body main .order .flex-wrapper form .inner-flex-box dd .radio:nth-child(2) {
   margin: 1.5rem 0;
@@ -1015,32 +1067,58 @@ body main .order .flex-wrapper form .inner-flex-box dd input, body main .order .
   padding: 16px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd .name1 {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd label {
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 2px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd label a {
   color: var(--color-accentA);
 }
+body main .order .flex-wrapper form .inner-flex-box:nth-child(2),
+body main .order .flex-wrapper form .inner-flex-box:nth-child(3),
+body main .order .flex-wrapper form .inner-flex-box:nth-child(4),
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5),
+body main .order .flex-wrapper form .inner-flex-box:nth-child(6),
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7),
+body main .order .flex-wrapper form .inner-flex-box:nth-child(8) {
+  display: block;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dt,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dt,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dt,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dt,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dt,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dt,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dt {
+  padding-bottom: 16px;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd {
+  width: 100%;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd input {
   width: 100%;
 }
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd {
-  white-space: nowrap;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input {
-  width: 80px;
-}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd {
-  white-space: nowrap;
+  width: 100%;
 }
+body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
-  width: 60px;
+  width: 100px;
 }
 body main .order .flex-wrapper form .inner-flex-box:nth-child(9) dd {
   display: flex;
@@ -1257,6 +1335,30 @@ body footer .container small {
 }
 
 @media screen and (min-width: 960px) {
+  /***************************************************
+  main-svg
+   **************************************************/
+  @keyframes animate-svg-stroke-1 {
+    0% {
+      stroke-dashoffset: 6537.2407226563px;
+      stroke-dasharray: 6537.2407226563px;
+    }
+    100% {
+      stroke-dashoffset: 13074.4814453125px;
+      stroke-dasharray: 6537.2407226563px;
+    }
+  }
+  @keyframes animate-svg-fill-1 {
+    0% {
+      fill: transparent;
+    }
+    100% {
+      fill: rgb(33, 66, 105);
+    }
+  }
+  .svg-elem-1 {
+    animation: animate-svg-stroke-1 2s ease-in-out 0s both, animate-svg-fill-1 2s ease-in-out 2s both;
+  }
   .shape1 {
     width: 600px; /*横幅*/
     height: 600px; /*縦幅*/
@@ -1357,7 +1459,7 @@ body footer .container small {
     }
   }
   .container {
-    padding: 195px 180px;
+    padding: 192px 180px;
     background-repeat: no-repeat;
     position: relative;
   }
@@ -1372,19 +1474,9 @@ body footer .container small {
   h3 {
     font-size: 2rem;
     font-weight: 600;
-    line-height: 2;
   }
   body {
     position: relative;
-  }
-  body #waveCanvas {
-    position: absolute;
-    top: -400px;
-    z-index: -999;
-    left: -20px;
-    width: 3000px;
-    height: 800px;
-    rotate: 180deg;
   }
   body header {
     position: fixed;
@@ -1454,18 +1546,21 @@ body footer .container small {
     display: block;
   }
   body main .kv-pc .container {
+    padding-top: 128px;
     display: flex;
     -moz-column-gap: 120px;
          column-gap: 120px;
     justify-content: center;
+    align-items: center;
     background-image: url(../img/Subtract.svg);
     background-repeat: no-repeat;
     background-size: 110%;
     background-position: bottom left;
   }
   body main .kv-pc .container .main-wrapper1 .card {
-    width: 300px;
-    padding-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+    padding-bottom: 80px;
   }
   body main .kv-pc .container .main-wrapper1 p {
     color: var(--color-white);
@@ -1498,6 +1593,7 @@ body footer .container small {
     font-weight: 400;
     line-height: 2rem;
     letter-spacing: 0.0375rem;
+    padding-top: 128px;
   }
   body main .kv {
     display: none;
@@ -1518,14 +1614,15 @@ body footer .container small {
     border-radius: 12px;
     background: #FFF;
     box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
-    padding: 24px;
+    padding: 48px;
     -moz-column-gap: 16px;
          column-gap: 16px;
   }
   body main .feature .container .sub-container .pc-wrapper .feature1, body main .feature .container .sub-container .pc-wrapper .feature3 {
-    width: 350px;
+    width: 100%;
+    max-width: 380px;
     margin: 0;
-    margin-left: calc(60% - 45vw);
+    margin-left: calc(60% - 43vw);
   }
   body main .feature .container .sub-container .pc-wrapper .text-box {
     position: relative;
@@ -1545,7 +1642,7 @@ body footer .container small {
   body main .feature .container .sub-container .pc-wrapper .text-box p {
     font-size: 1.125rem;
     line-height: 2;
-    letter-spacing: 0.1875rem;
+    letter-spacing: 0.0625rem;
   }
   body main .feature .container .sub-container .pc-wrapper .text-box .sns-icon {
     display: block;
@@ -1560,15 +1657,16 @@ body footer .container small {
     border-radius: 12px;
     background: #FFF;
     box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
-    padding: 24px;
+    padding: 48px;
     -moz-column-gap: 16px;
          column-gap: 16px;
     flex-direction: row-reverse;
   }
   body main .feature .container .sub-container .pc-wrapper2 .feature2, body main .feature .container .sub-container .pc-wrapper2 .feature4 {
-    width: 350px;
+    width: 100%;
+    max-width: 380px;
     margin: 0;
-    margin-top: calc(60% - 55vw);
+    margin-top: calc(60% - 50vw);
   }
   body main .feature .container .sub-container .pc-wrapper2 .text-box {
     position: relative;
@@ -1588,11 +1686,11 @@ body footer .container small {
   body main .feature .container .sub-container .pc-wrapper2 .text-box p {
     font-size: 1.125rem;
     line-height: 2;
-    letter-spacing: 0.1875rem;
+    letter-spacing: 0.0625rem;
   }
   body main .feature .container .sub-container .pc-wrapper2 .text-box .sns-icon {
     display: block;
-    max-width: 100%;
+    max-width: 70%;
     padding-top: 40px;
     margin: 0;
   }
@@ -1630,11 +1728,11 @@ body footer .container small {
   body main .problem .container .pc-flex .flex-wrapper .inner-box {
     background-color: #FFF;
     padding: 40px 40px 40px 40px;
-    height: 400px;
     margin-bottom: 0;
   }
   body main .problem .container .pc-flex .flex-wrapper .inner-box img {
-    width: 100%;
+    width: auto;
+    height: 220px;
     display: block;
     margin: 0 auto;
     padding: 40px 0;
@@ -1674,6 +1772,7 @@ body footer .container small {
   body main .how .container h3 {
     text-align: center;
     padding-bottom: 128px;
+    line-height: 2;
   }
   body main .how .container .flex-wrapper {
     display: flex;
@@ -1698,7 +1797,7 @@ body footer .container small {
     line-height: 2rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
-    padding-bottom: 64px;
+    padding-bottom: 0;
   }
   body main .about {
     padding-top: 32px;
@@ -1708,9 +1807,12 @@ body footer .container small {
     display: none;
   }
   body main .about .container-pc {
+    display: block;
+    padding: 195px 180px;
     background-image: url(../img/About.svg);
     background-size: 50% 40%;
     background-position: 30% -20%;
+    background-repeat: no-repeat;
   }
   body main .about .container-pc .flex-wrapper {
     display: flex;
@@ -1728,7 +1830,7 @@ body footer .container small {
     justify-content: flex-start;
     -moz-column-gap: 24px;
          column-gap: 24px;
-    padding: 40px 0;
+    padding-bottom: 40px;
   }
   body main .about .container-pc .flex-wrapper .inner-flex-box .inner-icon img {
     width: 30px;
@@ -1740,7 +1842,7 @@ body footer .container small {
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 0.0625rem;
-    padding-bottom: 24px;
+    padding-bottom: 0;
     line-height: 2;
     text-align: left;
     margin-left: 54px;
@@ -1763,7 +1865,7 @@ body footer .container small {
   }
   body main .about .container-pc .flex-wrapper:last-child .inner-flex-box img {
     width: 540px;
-    padding-bottom: 64px;
+    padding-bottom: 0;
   }
   body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon {
     display: flex;
@@ -1771,7 +1873,7 @@ body footer .container small {
     justify-content: flex-start;
     -moz-column-gap: 24px;
          column-gap: 24px;
-    padding: 24px 0;
+    padding-bottom: 40px;
   }
   body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon img {
     width: 30px;
@@ -1821,12 +1923,15 @@ body footer .container small {
     max-width: 1290px;
   }
   body main .order .flex-wrapper form .inner-flex-box {
-    margin-bottom: 40px;
+    display: table;
+    table-layout: fixed;
+    padding-bottom: 40px;
     width: 100%;
   }
   body main .order .flex-wrapper form .inner-flex-box dt {
     font-size: 1.125rem;
     width: 20%;
+    padding-right: 40px;
   }
   body main .order .flex-wrapper form .inner-flex-box dd {
     width: 80%;
@@ -1853,9 +1958,6 @@ body footer .container small {
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd .radio {
     margin: 0;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd .radio:nth-child(2) {
-    margin: 0 24px;
-  }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd label {
     font-weight: 500;
   }
@@ -1863,13 +1965,13 @@ body footer .container small {
     color: var(--color-accentA);
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input {
-    width: 600px;
+    width: 100%;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd {
     display: initial;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input {
-    width: 200px;
+    width: 40%;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd .name1 {
     margin-bottom: 0;
@@ -1879,13 +1981,22 @@ body footer .container small {
     width: 100px;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input {
-    width: 600px;
+    width: 100%;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
     width: 100px;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd input {
-    width: 400px;
+    width: 100%;
+  }
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(2),
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(3),
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(4),
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(5),
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(6),
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(7),
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(8) {
+    display: table;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(9) dd {
     display: flex;
@@ -1895,7 +2006,7 @@ body footer .container small {
   }
   body main .order .flex-wrapper form .submit-btn {
     padding: 16px 24px;
-    margin-left: 20%;
+    margin: 0 auto;
     border: 2px solid var(--color-accentA);
   }
   body main .order .flex-wrapper form .submit-btn input {
@@ -1914,6 +2025,9 @@ body footer .container small {
     background-image: url(../img/Question.svg);
     background-size: 50% 40%;
     background-position: 30% 0;
+  }
+  body main .question .container .read-more {
+    padding: 0;
   }
   body main .question .container .read-more .txt-show {
     /*=========================アコーディオンのためのcss
@@ -1956,9 +2070,12 @@ body footer .container small {
   }
   body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box2 {
     display: flex; /*はじめは非表示*/
-    padding: 40px 16px;
+    padding: 0;
     -moz-column-gap: 8px;
          column-gap: 8px;
+  }
+  body main .question .container .read-more .txt-show .accordion-area li:first-child {
+    margin-top: 0;
   }
   body main .question .container .read-more .txt-hide .accordion-area li {
     margin: 40px 0;
@@ -2006,8 +2123,12 @@ body footer .container small {
     -moz-column-gap: 8px;
          column-gap: 8px;
   }
+  body main .question .container .read-more .txt-hide .accordion-area li:first-child {
+    margin-top: 0;
+  }
   body main .question .container .read-more button.more {
     width: 320px;
+    padding: 0;
   }
   body main .question .container .read-more button.more::after {
     content: "さらに表示";

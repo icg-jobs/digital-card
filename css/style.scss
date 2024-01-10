@@ -30,6 +30,41 @@ body::-webkit-scrollbar{/*Google Chrome、Safariへの対応*/
   display: none;
 }
 
+/*========= waveを描画するエリア設定 ===============*/
+
+canvas {
+  position: fixed;
+  z-index: -999;
+  top: 0;
+  left:0;
+  width: 100%;
+  transform: rotate(180deg);
+}
+
+/***************************************************
+card-animation
+**************************************************/
+.animation{
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  width: 128px;
+}
+
+.card {
+  animation-name: poyopoyo;
+}
+
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
+
 
 
 // ラジオボタン*************
@@ -93,10 +128,68 @@ $color3: #025DC7;
     }
   }
 }
-// ****************
+
 
 
 // ここからモバイル版------------------
+
+
+/***************************************************
+main-ttl
+**************************************************/
+
+
+@-webkit-keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 2768.0087890625px;
+    stroke-dasharray: 2768.0087890625px;
+  }
+
+  100% {
+    stroke-dashoffset: 5536.017578125px;
+    stroke-dasharray: 2768.0087890625px;
+  }
+}
+
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 2768.0087890625px;
+    stroke-dasharray: 2768.0087890625px;
+  }
+
+  100% {
+    stroke-dashoffset: 5536.017578125px;
+    stroke-dasharray: 2768.0087890625px;
+  }
+}
+
+@-webkit-keyframes animate-svg-fill-1 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(33, 66, 105);
+  }
+}
+
+@keyframes animate-svg-fill-1 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(33, 66, 105);
+  }
+}
+
+.svg-elem-1 {
+  -webkit-animation: animate-svg-stroke-1 2s ease-in-out 0s both,
+                      animate-svg-fill-1 2s ease-in-out 1.5s both;
+          animation: animate-svg-stroke-1 2s ease-in-out 0s both,
+              animate-svg-fill-1 2s ease-in-out 1.5s both;
+}
+
 
 .container {
   padding: 32px 16px 0 16px;
@@ -255,15 +348,6 @@ h3 {
 
 body {
   position: relative;
-  #waveCanvas {
-    position: absolute;
-    top: -300px;
-    z-index: -999;
-    left: -60px;
-    width: 3000px;
-    height: 500px;
-    rotate: 170deg;
-  }
   header {
     position: fixed;
     width: 100%;
@@ -346,7 +430,7 @@ body {
             margin: 0 auto;
           }
           .card {
-            width: rem(250);
+            width: 60%;
             padding-top: 40px;
             margin: 0 auto;
             display: block;
@@ -366,6 +450,7 @@ body {
               font-size: rem(14);
               font-weight: 400;
               letter-spacing: rem(2);
+              padding: 0;
             }
           }
           img {
@@ -393,8 +478,9 @@ body {
       background-position: left 30px;
       margin-bottom: 64px;
       .feature1,.feature2,.feature3,.feature4 {
-        width: rem(200);
         display: block;
+        max-width: 250px;
+        width: 70%;
         margin: 40px auto -16px auto;
       }
       .text-box {
@@ -405,7 +491,7 @@ body {
         h3 {
           color: var(--color-subtitle-text);
           padding-bottom: 24px;
-          span {
+          .sub-ttl {
             color: #CCCCCC;
             font-weight: 500;
           }
@@ -417,6 +503,7 @@ body {
         .sns-icon {
           display: block;
           width: 100%;
+          max-width: 350px;
           margin: 24px auto 0 auto;
         }
       }
@@ -442,6 +529,7 @@ body {
           margin-bottom: 64px;
           img {
             width: 100%;
+            max-width: 350px;
             display: block;
             margin: 0 auto;
             padding: 40px;
@@ -621,15 +709,14 @@ body {
           width: 100%;
           display: table;
           table-layout: fixed;
-          margin-bottom: 24px;
+          padding-bottom: 24px;
           dt {
             letter-spacing: rem(2);
             display: table-cell;
             font-size: rem(14);
-            width: 40%;
           }
           dd {
-            margin-left: 4px;
+            margin-left: 0;
             .radio:nth-child(2) {
               margin: rem(24) 0;
             }
@@ -639,10 +726,10 @@ body {
               padding: 16px;
             }
             .name1 {
-              margin-bottom: 16px;
+              margin-bottom: 10px;
             }
             label {
-              line-height: 2;
+              line-height: 1.5;
               letter-spacing: 2px;
               a {
                 color: var(--color-accentA);
@@ -650,29 +737,30 @@ body {
             }
           }
         }
+        .inner-flex-box:nth-child(2),
         .inner-flex-box:nth-child(3),
         .inner-flex-box:nth-child(4),
+        .inner-flex-box:nth-child(5),
         .inner-flex-box:nth-child(6),
+        .inner-flex-box:nth-child(7),
         .inner-flex-box:nth-child(8) {
+          display: block;
+          dt {
+            padding-bottom: 16px;
+          }
           dd {
+            width: 100%;
             input {
               width: 100%;
             }
           }
         }
-        .inner-flex-box:nth-child(5) {
-          dd {
-            white-space: nowrap;
-            input {
-              width: 80px;
-            }
-          }
-        }
+        .inner-flex-box:nth-child(5),
         .inner-flex-box:nth-child(7) {
           dd {
-            white-space: nowrap;
+            width: 100%;
             input {
-              width: 60px;
+              width: 100px;
             }
           }
         }
@@ -909,8 +997,65 @@ body {
 
 // ここからPC版------------------
 
-
 @media screen and (min-width: 960px) {
+
+
+/***************************************************
+main-svg
+ **************************************************/
+
+@-webkit-keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 6537.24072265625px;
+    stroke-dasharray: 6537.24072265625px;
+  }
+
+  100% {
+    stroke-dashoffset: 13074.4814453125px;
+    stroke-dasharray: 6537.24072265625px;
+  }
+}
+
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 6537.24072265625px;
+    stroke-dasharray: 6537.24072265625px;
+  }
+
+  100% {
+    stroke-dashoffset: 13074.4814453125px;
+    stroke-dasharray: 6537.24072265625px;
+  }
+}
+
+@-webkit-keyframes animate-svg-fill-1 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(33, 66, 105);
+  }
+}
+
+@keyframes animate-svg-fill-1 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(33, 66, 105);
+  }
+}
+.svg-elem-1 {
+  -webkit-animation: animate-svg-stroke-1 2s ease-in-out 0s both,
+                      animate-svg-fill-1 2s ease-in-out 2s both;
+        animation: animate-svg-stroke-1 2s ease-in-out 0s both,
+              animate-svg-fill-1 2s ease-in-out 2s both;
+}
+
+
+
 
   .shape1 {
     width:600px;/*横幅*/
@@ -1017,7 +1162,7 @@ body {
 
 
 .container {
-  padding: 195px 180px;
+  padding: 192px 180px;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -1033,21 +1178,11 @@ h2 {
 h3 {
   font-size: rem(32);
   font-weight: 600;
-  line-height: 2;
 }
 
 
 body {
   position: relative;
-  #waveCanvas {
-    position: absolute;
-    top: -400px;
-    z-index: -999;
-    left: -20px;
-    width: 3000px;
-    height: 800px;
-    rotate: 180deg;
-  }
   header {
     position: fixed;
     width: 100%;
@@ -1113,17 +1248,20 @@ body {
     .kv-pc {
       display: block;
       .container {
+        padding-top: 128px;
         display: flex;
         column-gap: 120px;
         justify-content: center;
+        align-items: center;
         background-image: url(../img/Subtract.svg);
         background-repeat: no-repeat;
         background-size: 110%;
         background-position: bottom left;
         .main-wrapper1 {
           .card {
-            width: 300px;
-            padding-bottom: 40px;
+            width: 100%;
+            max-width: 400px;
+            padding-bottom: 80px;
           }
           p {
             color: var(--color-white);
@@ -1157,6 +1295,7 @@ body {
             font-weight: 400;
             line-height: 2rem;
             letter-spacing: 0.0375rem;
+            padding-top: 128px;
             }
           }
         }
@@ -1179,12 +1318,13 @@ body {
           border-radius: 12px;
           background: #FFF;
           box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
-          padding: 24px;
+          padding: 48px;
           column-gap: 16px;
           .feature1,.feature3 {
-            width: 350px;
+            width: 100%;
+            max-width: 380px;
             margin: 0;
-            margin-left: calc(60% - 45vw);
+            margin-left: calc(60% - 43vw);
           }
           .text-box {
             position: relative;
@@ -1203,7 +1343,7 @@ body {
             p {
               font-size: rem(18);
               line-height: 2;
-              letter-spacing: rem(3);
+              letter-spacing: rem(1);
             }
             .sns-icon {
               display: block;
@@ -1220,13 +1360,14 @@ body {
           border-radius: 12px;
           background: #FFF;
           box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
-          padding: 24px;
+          padding: 48px;
           column-gap: 16px;
           flex-direction: row-reverse;
           .feature2,.feature4 {
-            width: 350px;
+            width: 100%;
+            max-width: 380px;
             margin: 0;
-            margin-top: calc(60% - 55vw);
+            margin-top: calc(60% - 50vw);
           }
           .text-box {
             position: relative;
@@ -1245,11 +1386,11 @@ body {
             p {
               font-size: rem(18);
               line-height: 2;
-              letter-spacing: rem(3);
+              letter-spacing: rem(1);
             }
             .sns-icon {
               display: block;
-              max-width: 100%;
+              max-width: 70%;
               padding-top: 40px;
               margin: 0;
             }
@@ -1287,10 +1428,10 @@ body {
           .inner-box {
             background-color: #FFF;
             padding: 40px 40px 40px 40px;
-            height: 400px;
             margin-bottom: 0;
             img {
-              width: 100%;
+              width: auto;
+              height: 220px;
               display: block;
               margin: 0 auto;
               padding: 40px 0;
@@ -1333,6 +1474,7 @@ body {
       h3 {
         text-align: center;
         padding-bottom: 128px;
+        line-height: 2;
       }
       .flex-wrapper {
         display: flex;
@@ -1354,7 +1496,7 @@ body {
             line-height: rem(32);
             font-weight: 400;
             letter-spacing: rem(1.6);
-            padding-bottom: 64px;
+            padding-bottom: 0;
           }
         }
       }
@@ -1367,9 +1509,12 @@ body {
       display: none;
     }
     .container-pc {
+      display: block;
+      padding: 195px 180px;
       background-image: url(../img/About.svg);
       background-size: 50% 40%;
       background-position: 30% -20%;
+      background-repeat: no-repeat;
       .flex-wrapper {
         display: flex;
         align-items: center;
@@ -1384,7 +1529,7 @@ body {
             align-items: center;
             justify-content: flex-start;
             column-gap: 24px;
-            padding: 40px 0;
+            padding-bottom: 40px;
             img {
               width: 30px;
               margin: 0;
@@ -1396,7 +1541,7 @@ body {
             font-size: rem(32);
             font-weight: 600;
             letter-spacing: rem(1);
-            padding-bottom: 24px;
+            padding-bottom: 0;
             line-height: 2;
             text-align: left;
             margin-left: 54px;
@@ -1421,14 +1566,14 @@ body {
         .inner-flex-box {
           img {
             width: 540px;
-            padding-bottom: 64px;
+            padding-bottom: 0;
           }
           .inner-icon {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             column-gap: 24px;
-            padding: 24px 0;
+            padding-bottom: 40px;
             img {
               width: 30px;
               margin: 0;
@@ -1483,11 +1628,14 @@ body {
       max-width: 1290px;
       form {
         .inner-flex-box {
-          margin-bottom: 40px;
+          display: table;
+          table-layout: fixed;
+          padding-bottom: 40px;
           width: 100%;
           dt {
             font-size: rem(18);
             width: 20%;
+            padding-right: 40px;
           }
           dd {
             width: 80%;
@@ -1512,9 +1660,6 @@ body {
             .radio {
               margin: 0;
             }
-            .radio:nth-child(2) {
-              margin: 0 24px;
-            }
             label {
               font-weight: 500;
               a {
@@ -1526,7 +1671,7 @@ body {
         .inner-flex-box:nth-child(3) {
           dd {
             input {
-              width: 600px;
+              width: 100%;
             }
           }
         }
@@ -1534,7 +1679,7 @@ body {
           dd {
             display: initial;
             input {
-              width: 200px;
+              width: 40%;
             }
             .name1 {
               margin-bottom: 0;
@@ -1552,7 +1697,7 @@ body {
         .inner-flex-box:nth-child(6) {
           dd {
             input {
-              width: 600px;
+              width: 100%;
             }
           }
         }
@@ -1566,9 +1711,18 @@ body {
         .inner-flex-box:nth-child(8) {
           dd {
             input {
-              width: 400px;
+              width: 100%;
             }
           }
+        }
+        .inner-flex-box:nth-child(2),
+        .inner-flex-box:nth-child(3),
+        .inner-flex-box:nth-child(4),
+        .inner-flex-box:nth-child(5),
+        .inner-flex-box:nth-child(6),
+        .inner-flex-box:nth-child(7),
+        .inner-flex-box:nth-child(8) {
+          display: table;
         }
         .inner-flex-box:nth-child(9) {
           dd {
@@ -1579,7 +1733,7 @@ body {
         }
         .submit-btn {
           padding: 16px 24px;
-          margin-left: 20%;
+          margin: 0 auto;
           border: 2px solid var(--color-accentA);
           input {
             font-size: rem(18);
@@ -1601,6 +1755,7 @@ body {
         background-size: 50% 40%;
         background-position: 30% 0;
       .read-more {
+        padding: 0;
         .txt-show {
           /*=========================アコーディオンのためのcss
           /*アコーディオン全体*/
@@ -1640,10 +1795,13 @@ body {
                 /*アコーディオンで現れるエリア*/
               .inner-box2 {
                 display: flex;/*はじめは非表示*/
-                padding: 40px 16px;
+                padding: 0;
                 column-gap: 8px;
               }
               }
+            }
+            li:first-child {
+              margin-top: 0;
             }
           }
         }
@@ -1694,11 +1852,15 @@ body {
                   }
                 }
             }
+            li:first-child {
+              margin-top: 0;
+            }
           }
         }
         // さらに表示*************
           button.more {
           width: 320px;
+          padding: 0;
         }
         button.more::after {
           content: "さらに表示";

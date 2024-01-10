@@ -1,12 +1,5 @@
-// ページ内リンク
-// $('a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
-// 	var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
-// 	var pos = $(elmHash).offset().top;	//idの上部の距離を取得
-// 	$('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
-// 	return false;
-// });
 
-//上*****************************************************
+
 var unit = 100,
     canvasList, // キャンバスの配列
     info = {}, // 全キャンバス共通の描画情報
@@ -20,24 +13,24 @@ var unit = 100,
 function init() {
     info.seconds = 0;
     info.t = 0;
-		canvasList = [];
+    canvasList = [];
     colorList = [];
     // canvas1個めの色指定
     canvasList.push(document.getElementById("waveCanvas"));
     colorList.push(['#DCECFF']);
-	// 各キャンバスの初期化
-		for(var canvasIndex in canvasList) {
+  // 各キャンバスの初期化
+    for(var canvasIndex in canvasList) {
         var canvas = canvasList[canvasIndex];
         canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
-        canvas.height = 250;//波の高さ
+        canvas.height = 100;//波の高さ
         canvas.contextCache = canvas.getContext("2d");
     }
     // 共通の更新処理呼び出し
-		update();
+    update();
 }
 
 function update() {
-		for(var canvasIndex in canvasList) {
+    for(var canvasIndex in canvasList) {
         var canvas = canvasList[canvasIndex];
         // 各キャンバスの描画
         draw(canvas, colorList[canvasIndex]);
@@ -46,7 +39,7 @@ function update() {
     info.seconds = info.seconds + .014;
     info.t = info.seconds*Math.PI;
     // 自身の再起呼び出し
-    setTimeout(update, 40);
+    setTimeout(update, 50);
 }
 
 /**
@@ -56,7 +49,7 @@ function update() {
  * itself again.
  */
 function draw(canvas, color) {
-		// 対象のcanvasのコンテキストを取得
+    // 対象のcanvasのコンテキストを取得
     var context = canvas.contextCache;
     // キャンバスの描画をクリア
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -70,7 +63,7 @@ function draw(canvas, color) {
 * drawWave(色, 不透明度, 波の幅のzoom, 波の開始位置の遅れ)
 */
 function drawWave(canvas, color, alpha, zoom, delay) {
-		var context = canvas.contextCache;
+    var context = canvas.contextCache;
     context.fillStyle = color;//塗りの色
     context.globalAlpha = alpha;
     context.beginPath(); //パスの開始
@@ -104,7 +97,11 @@ function drawSine(canvas, t, zoom, delay) {
         context.lineTo(i, unit*y+xAxis);
     }
 }
+
 init();
+
+
+// アコーディオン
 
 $(function(){
     $(".more").on("click", function() {
