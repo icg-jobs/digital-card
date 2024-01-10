@@ -475,6 +475,77 @@ card-animation
     transform: scale(0.95);
   }
 }
+/*========= 流れるテキスト ===============*/
+/*全共通*/
+.slide-in {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.slide-in_inner {
+  display: inline-block;
+}
+
+/*左右のアニメーション*/
+.leftAnime {
+  opacity: 0; /*事前に透過0にして消しておく*/
+}
+
+.slideAnimeLeftRight {
+  animation-name: slideTextX100;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%); /*要素を左の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /*要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+.slideAnimeRightLeft {
+  animation-name: slideTextX-100;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%); /*要素を右の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /*要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+/*========= テキストを滑らかに出現させるためのCSS ===============*/
+span.smoothText {
+  overflow: hidden;
+  display: block;
+}
+
+/* アニメーションで傾斜がついている文字列を水平に戻す*/
+span.smoothTextTrigger {
+  transition: 0.8s ease-in-out;
+  transform: translate3d(0, 100%, 0) skewY(12deg);
+  transform-origin: left;
+  display: block;
+}
+
+span.smoothTextTrigger.smoothTextAppear {
+  transform: translate3d(0, 0, 0) skewY(0);
+}
+
+/***************************************************
+// ラジオボタン
+**************************************************/
 .radio input[type=radio] {
   position: absolute;
   opacity: 0;
@@ -1559,7 +1630,7 @@ body footer .container small {
   }
   body main .kv-pc .container .main-wrapper1 .card {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     padding-bottom: 80px;
   }
   body main .kv-pc .container .main-wrapper1 p {
@@ -1856,16 +1927,12 @@ body footer .container small {
     text-align: left;
   }
   body main .about .container-pc .flex-wrapper img {
-    width: 250px;
-    height: 100%;
+    width: 100%;
+    max-width: 320px;
     mix-blend-mode: multiply;
   }
   body main .about .container-pc .flex-wrapper:last-child {
     padding: 0;
-  }
-  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box img {
-    width: 540px;
-    padding-bottom: 0;
   }
   body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon {
     display: flex;
@@ -1876,12 +1943,22 @@ body footer .container small {
     padding-bottom: 40px;
   }
   body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon img {
+    width: 100%;
+    max-width: 540px;
+    padding-bottom: 0;
+  }
+  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon img {
     width: 30px;
     margin: 0;
     padding: 0;
   }
   body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon h3 {
     letter-spacing: 60px;
+  }
+  body main .about .container-pc .flex-wrapper:last-child img {
+    width: 100%;
+    max-width: 540px;
+    padding-bottom: 0;
   }
   body main .about .container-pc .flex-wrapper:last-child .text-box p {
     color: var(--color-inner-text);

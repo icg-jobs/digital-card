@@ -1,5 +1,6 @@
 
 
+
 var unit = 100,
     canvasList, // キャンバスの配列
     info = {}, // 全キャンバス共通の描画情報
@@ -97,8 +98,54 @@ function drawSine(canvas, t, zoom, delay) {
         context.lineTo(i, unit*y+xAxis);
     }
 }
-
 init();
+
+function slideAnime(){
+//====左に動くアニメーションここから===
+    $('.leftAnime').each(function(){ 
+    var elemPos = $(this).offset().top-50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+        //左から右へ表示するクラスを付与
+        //テキスト要素を挟む親要素（左側）とテキスト要素を元位置でアニメーションをおこなう
+        $(this).addClass("slideAnimeLeftRight"); //要素を左枠外にへ移動しCSSアニメーションで左から元の位置に移動
+        $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");  //子要素は親要素のアニメーションに影響されないように逆の指定をし元の位置をキープするアニメーションをおこなう
+    }else{
+        //左から右へ表示するクラスを取り除く
+        $(this).removeClass("slideAnimeLeftRight");
+        $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
+        
+    }
+    });
+    
+}
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function (){
+    slideAnime();/* アニメーション用の関数を呼ぶ*/
+});// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+
+
+
+//========= テキストを滑らかに出現させる
+// smoothTriggerにsmoothTextAppearというクラス名を付ける定義
+function SmoothTextAnime() {
+$('.smoothTextTrigger').each(function(){ //smoothTextTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('smoothTextAppear');// 画面内に入ったらsmoothTextAppearというクラス名を追記
+    }else{
+    $(this).removeClass('smoothTextAppear');// 画面外に出たらsmoothTextAppearというクラス名を外す
+    }
+    }); 
+}
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function () {
+SmoothTextAnime();/* アニメーション用の関数を呼ぶ*/
+});// ここまで画面をスクロールをしたら動かしたい場合の記述
 
 
 // アコーディオン
@@ -116,34 +163,5 @@ $('.inner-box1').on('click', function () {
     var findElm = $(this).next(".inner-box2");//直後のアコーディオンを行うエリアを取得し
     $(findElm).slideToggle(500);//アコーディオンの上下動作
 
-// $('.down').addClass('active');
-// if($(this).hasClass('active')){
-//     $(this).removeClass('active');
-//     }
 });
 });                            
-
-
-//アコーディオンをクリックした時の動作
-// $('.inner-box1').on('click', function() {//タイトル要素をクリックしたら
-//     var findElm = $(this).next(".inner-box2");//直後のアコーディオンを行うエリアを取得し
-//     $(findElm).slideToggle();//アコーディオンの上下動作
-    
-//     if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば
-//         $(this).removeClass('close');//クラス名を除去し
-//     }else{//それ以外は
-//         $(this).toggleClass('close');//クラス名closeを付与
-//     }
-// });
-
-
-// //ページが読み込まれた際にopenクラスをつけ、openがついていたら開く動作※不必要なら下記全て削除
-// $(window).on('load', function(){
-// $('.inner-box2').addClass(".open"); //accordion-areaのはじめのliにあるsectionにopenクラスを追加
-// $(".open").each(function(index, element){ //openクラスを取得
-//     var Title =$(element).children('.inner-box2'); //openクラスの子要素のtitleクラスを取得
-//     $(Title).addClass('close');       //タイトルにクラス名closeを付与し
-//     var Box =$(element).children('.inner-box2'); //openクラスの子要素boxクラスを取得
-//     $(Box).slideDown(1000);          //アコーディオンを開く
-// });
-// });

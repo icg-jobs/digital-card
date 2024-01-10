@@ -51,11 +51,9 @@ card-animation
   animation-duration: 1.5s;
   width: 128px;
 }
-
 .card {
   animation-name: poyopoyo;
 }
-
 @keyframes poyopoyo {
   0%, 40%, 60%, 80% {
     transform: scale(1.0);
@@ -65,9 +63,84 @@ card-animation
   }
 }
 
+/*========= 流れるテキスト ===============*/
+/*全共通*/
+.slide-in {
+  overflow: hidden;
+    display: inline-block;
+}
+
+.slide-in_inner {
+  display: inline-block;
+
+}
+
+/*左右のアニメーション*/
+.leftAnime{
+    opacity: 0;/*事前に透過0にして消しておく*/
+}
+
+.slideAnimeLeftRight {
+  animation-name:slideTextX100;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX100 {
+  from {
+  transform: translateX(-100%); /*要素を左の枠外に移動*/
+        opacity: 0;
+  }
+
+  to {
+  transform: translateX(0);/*要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+
+.slideAnimeRightLeft {
+  animation-name:slideTextX-100;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX-100 {
+  from {
+  transform: translateX(100%);/*要素を右の枠外に移動*/
+    opacity: 0;
+  }
+
+  to {
+  transform: translateX(0);/*要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
 
 
-// ラジオボタン*************
+/*========= テキストを滑らかに出現させるためのCSS ===============*/
+span.smoothText {
+  overflow: hidden;
+  display: block;
+}
+
+/* アニメーションで傾斜がついている文字列を水平に戻す*/
+span.smoothTextTrigger{
+  transition: .8s ease-in-out;
+  transform: translate3d(0,100%,0) skewY(12deg);
+  transform-origin: left;
+  display: block;
+}
+span.smoothTextTrigger.smoothTextAppear{
+    transform: translate3d(0,0,0) skewY(0);
+}
+
+
+
+/***************************************************
+// ラジオボタン
+**************************************************/
 $color1: #f5f5f5;
 $color2: #214269;
 $color3: #025DC7;
@@ -137,8 +210,6 @@ $color3: #025DC7;
 /***************************************************
 main-ttl
 **************************************************/
-
-
 @-webkit-keyframes animate-svg-stroke-1 {
   0% {
     stroke-dashoffset: 2768.0087890625px;
@@ -1260,7 +1331,7 @@ body {
         .main-wrapper1 {
           .card {
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
             padding-bottom: 80px;
           }
           p {
@@ -1556,19 +1627,20 @@ body {
           }
         }
         img {
-          width: 250px;
-          height: 100%;
+          width: 100%;
+          max-width: 320px;
           mix-blend-mode: multiply;
         }
       }
       .flex-wrapper:last-child {
         padding: 0;
         .inner-flex-box {
-          img {
-            width: 540px;
-            padding-bottom: 0;
-          }
           .inner-icon {
+            img {
+              width: 100%;
+              max-width: 540px;
+              padding-bottom: 0;
+            }
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -1583,6 +1655,11 @@ body {
               letter-spacing: 60px;
             }
           }
+        }
+        img {
+          width: 100%;
+          max-width: 540px;
+          padding-bottom: 0;
         }
         .text-box {
           p {
