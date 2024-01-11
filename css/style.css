@@ -442,25 +442,13 @@ body::-webkit-scrollbar { /*Google Chrome、Safariへの対応*/
   display: none;
 }
 
-/*========= waveを描画するエリア設定 ===============*/
-canvas {
-  position: fixed;
-  z-index: -999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: rotate(180deg);
-}
-
 /***************************************************
 card-animation
 **************************************************/
 .animation {
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-duration: 1.5s;
-  width: 128px;
 }
 
 .card {
@@ -476,7 +464,7 @@ card-animation
   }
 }
 /***************************************************
-流れるテキスト
+流れるテキスト1
 **************************************************/
 /*全共通*/
 .slide-in {
@@ -530,25 +518,48 @@ card-animation
   }
 }
 /***************************************************
-テキストを滑らかに出現させるためのCSS
+流れるテキスト2
 **************************************************/
-span.smoothText {
-  overflow: hidden;
-  display: block;
+/*全共通*/
+/* 上下のアニメーション*/
+.downAnime {
+  opacity: 0; /* 事前に透過0 にして消しておく*/
 }
 
-/* アニメーションで傾斜がついている文字列を水平に戻す*/
-span.smoothTextTrigger {
-  transition: 0.8s ease-in-out;
-  transform: translate3d(0, 100%, 0) skewY(12deg);
-  transform-origin: left;
-  display: block;
+.slideAnimeDownUp {
+  animation-name: slideTextY100;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
-span.smoothTextTrigger.smoothTextAppear {
-  transform: translate3d(0, 0, 0) skewY(0);
+@keyframes slideTextY100 {
+  from {
+    transform: translateY(100%); /* 要素を上の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* 要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+.slideAnimeUpDown {
+  animation-name: slideTextY-100;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
+@keyframes slideTextY-100 {
+  from {
+    transform: translateY(-100%); /* 要素を下の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* 要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
 /***************************************************
 // ラジオボタン
 **************************************************/
@@ -1026,7 +1037,10 @@ body main .about .container {
 body main .about .container .flex-wrapper {
   padding-bottom: 64px;
 }
-body main .about .container .flex-wrapper .inner-flex-box .inner-icon {
+body main .about .container .flex-wrapper .inner-flex-box .text-box {
+  text-align: center;
+}
+body main .about .container .flex-wrapper .inner-flex-box .text-box .inner-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1034,7 +1048,7 @@ body main .about .container .flex-wrapper .inner-flex-box .inner-icon {
        column-gap: 8px;
   padding-bottom: 40px;
 }
-body main .about .container .flex-wrapper .inner-flex-box .inner-icon img {
+body main .about .container .flex-wrapper .inner-flex-box .text-box .inner-icon img {
   width: 30px;
   margin: 0;
 }
@@ -1121,6 +1135,13 @@ body main .order .container {
   background-size: 300px auto;
   background-position: left 0;
 }
+body main .order .container .order-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 4px;
+  padding-bottom: 40px;
+}
 body main .order .flex-wrapper form .inner-flex-box {
   width: 100%;
   display: table;
@@ -1158,8 +1179,7 @@ body main .order .flex-wrapper form .inner-flex-box:nth-child(3),
 body main .order .flex-wrapper form .inner-flex-box:nth-child(4),
 body main .order .flex-wrapper form .inner-flex-box:nth-child(5),
 body main .order .flex-wrapper form .inner-flex-box:nth-child(6),
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7),
-body main .order .flex-wrapper form .inner-flex-box:nth-child(8) {
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) {
   display: block;
 }
 body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dt,
@@ -1167,8 +1187,7 @@ body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dt,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dt,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dt,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dt,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dt,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dt {
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dt {
   padding-bottom: 16px;
 }
 body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd,
@@ -1176,8 +1195,7 @@ body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd {
+body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd {
   width: 100%;
 }
 body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd input,
@@ -1185,19 +1203,18 @@ body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd input {
-  width: 100%;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd {
-  width: 100%;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input,
 body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
+  width: 100%;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd {
+  width: 100vw;
+}
+body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input,
+body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input {
   width: 100px;
 }
-body main .order .flex-wrapper form .inner-flex-box:nth-child(9) dd {
+body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd {
   display: flex;
   align-items: center;
   -moz-column-gap: 8px;
@@ -1271,6 +1288,7 @@ body main .question .container .read-more .txt-show .accordion-area li .flex-wra
 }
 body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box2 {
   display: flex;
+  align-items: flex-start;
   -moz-column-gap: 16px;
        column-gap: 16px;
   padding: 24px 0;
@@ -1284,12 +1302,15 @@ body main .question .container .read-more .txt-show .accordion-area li .flex-wra
   letter-spacing: 2px;
   font-weight: 500;
 }
+body main .question .container .read-more .txt-show .accordion-area li:last-child {
+  margin-bottom: 0;
+}
 body main .question .container .read-more .txt-hide .accordion-area li {
   margin: 40px 0;
 }
 body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper {
   margin: 0 auto;
-  width: 100;
+  width: 100%;
   max-width: 900px;
   border-bottom: 2px dotted var(--color-inner-text);
   padding-bottom: 24px;
@@ -1318,7 +1339,7 @@ body main .question .container .read-more .txt-hide .accordion-area li .flex-wra
 }
 body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box2 {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   -moz-column-gap: 16px;
        column-gap: 16px;
   padding: 24px 0;
@@ -2001,6 +2022,13 @@ body footer .container small {
     background-size: 50% 40%;
     background-position: 30% -15%;
   }
+  body main .order .container .order-text {
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 2;
+    letter-spacing: 4px;
+    padding-bottom: 64px;
+  }
   body main .order .flex-wrapper {
     margin: 0 128px;
     max-width: 1290px;
@@ -2010,14 +2038,15 @@ body footer .container small {
     table-layout: fixed;
     padding-bottom: 40px;
     width: 100%;
+    white-space: nowrap;
   }
   body main .order .flex-wrapper form .inner-flex-box dt {
     font-size: 1.125rem;
-    width: 20%;
+    width: 40%;
     padding-right: 40px;
   }
   body main .order .flex-wrapper form .inner-flex-box dd {
-    width: 80%;
+    width: 60%;
   }
   body main .order .flex-wrapper form .inner-flex-box dd input, body main .order .flex-wrapper form .inner-flex-box dd select {
     border: 0.5px solid #AAAAAA;
@@ -2047,29 +2076,29 @@ body footer .container small {
   body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd label a {
     color: var(--color-accentA);
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd input {
     width: 100%;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd {
     display: initial;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input {
     width: 40%;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd .name1 {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd .name1 {
     margin-bottom: 0;
     margin-right: 16px;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input {
     width: 100px;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input {
     width: 100%;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input {
     width: 100px;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd input {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
     width: 100%;
   }
   body main .order .flex-wrapper form .inner-flex-box:nth-child(2),
@@ -2077,11 +2106,10 @@ body footer .container small {
   body main .order .flex-wrapper form .inner-flex-box:nth-child(4),
   body main .order .flex-wrapper form .inner-flex-box:nth-child(5),
   body main .order .flex-wrapper form .inner-flex-box:nth-child(6),
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(7),
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(8) {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(7) {
     display: table;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(9) dd {
+  body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd {
     display: flex;
     align-items: center;
     -moz-column-gap: 8px;
@@ -2153,6 +2181,7 @@ body footer .container small {
   }
   body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box2 {
     display: flex; /*はじめは非表示*/
+    align-items: flex-start;
     padding: 0;
     -moz-column-gap: 8px;
          column-gap: 8px;
@@ -2166,7 +2195,7 @@ body footer .container small {
   body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper {
     width: 80%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     /*アコーディオンで現れるエリア*/
   }
   body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box1 {
@@ -2202,7 +2231,6 @@ body footer .container small {
   body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box2 {
     display: flex; /*はじめは非表示*/
     padding: 40px 16px;
-    align-items: center;
     -moz-column-gap: 8px;
          column-gap: 8px;
   }
@@ -2211,7 +2239,7 @@ body footer .container small {
   }
   body main .question .container .read-more button.more {
     width: 320px;
-    padding: 0;
+    padding-top: 64px;
   }
   body main .question .container .read-more button.more::after {
     content: "さらに表示";
