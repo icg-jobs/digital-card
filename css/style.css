@@ -535,7 +535,7 @@ card-animation
 
 @keyframes slideTextY100 {
   from {
-    transform: translateY(100%); /* 要素を上の枠外に移動*/
+    transform: translateY(30%); /* 要素を上の枠外に移動*/
     opacity: 0;
   }
   to {
@@ -552,7 +552,7 @@ card-animation
 
 @keyframes slideTextY-100 {
   from {
-    transform: translateY(-100%); /* 要素を下の枠外に移動*/
+    transform: translateY(-30%); /* 要素を下の枠外に移動*/
     opacity: 0;
   }
   to {
