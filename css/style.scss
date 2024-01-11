@@ -62,77 +62,71 @@ card-animation
     transform: scale(0.95);
   }
 }
-
-/*========= 流れるテキスト ===============*/
+/***************************************************
+流れるテキスト
+**************************************************/
 /*全共通*/
 .slide-in {
   overflow: hidden;
     display: inline-block;
 }
-
 .slide-in_inner {
   display: inline-block;
-
 }
-
 /*左右のアニメーション*/
 .leftAnime{
     opacity: 0;/*事前に透過0にして消しておく*/
 }
-
 .slideAnimeLeftRight {
   animation-name:slideTextX100;
   animation-duration:1s;
   animation-fill-mode:forwards;
-    opacity: 0;
+  animation-delay: .5s;
+  opacity: 0;
 }
-
 @keyframes slideTextX100 {
   from {
   transform: translateX(-100%); /*要素を左の枠外に移動*/
-        opacity: 0;
+  opacity: 0;
   }
-
   to {
   transform: translateX(0);/*要素を元の位置に移動*/
-    opacity: 1;
+  opacity: 1;
   }
 }
-
 .slideAnimeRightLeft {
   animation-name:slideTextX-100;
   animation-duration:1s;
   animation-fill-mode:forwards;
-    opacity: 0;
+  animation-delay: .5s;
+  opacity: 0;
 }
-
 @keyframes slideTextX-100 {
   from {
   transform: translateX(100%);/*要素を右の枠外に移動*/
-    opacity: 0;
+  opacity: 0;
   }
-
   to {
   transform: translateX(0);/*要素を元の位置に移動*/
-    opacity: 1;
+  opacity: 1;
   }
 }
 
-
-/*========= テキストを滑らかに出現させるためのCSS ===============*/
+/***************************************************
+テキストを滑らかに出現させるためのCSS
+**************************************************/
 span.smoothText {
   overflow: hidden;
   display: block;
 }
-
 /* アニメーションで傾斜がついている文字列を水平に戻す*/
-span.smoothTextTrigger{
+span.smoothTextTrigger {
   transition: .8s ease-in-out;
   transform: translate3d(0,100%,0) skewY(12deg);
   transform-origin: left;
   display: block;
 }
-span.smoothTextTrigger.smoothTextAppear{
+span.smoothTextTrigger.smoothTextAppear {
     transform: translate3d(0,0,0) skewY(0);
 }
 
@@ -1080,40 +1074,33 @@ main-svg
     stroke-dashoffset: 6537.24072265625px;
     stroke-dasharray: 6537.24072265625px;
   }
-
   100% {
     stroke-dashoffset: 13074.4814453125px;
     stroke-dasharray: 6537.24072265625px;
   }
 }
-
 @keyframes animate-svg-stroke-1 {
   0% {
     stroke-dashoffset: 6537.24072265625px;
     stroke-dasharray: 6537.24072265625px;
   }
-
   100% {
     stroke-dashoffset: 13074.4814453125px;
     stroke-dasharray: 6537.24072265625px;
   }
 }
-
 @-webkit-keyframes animate-svg-fill-1 {
   0% {
     fill: transparent;
   }
-
   100% {
     fill: rgb(33, 66, 105);
   }
 }
-
 @keyframes animate-svg-fill-1 {
   0% {
     fill: transparent;
   }
-
   100% {
     fill: rgb(33, 66, 105);
   }
@@ -1128,72 +1115,72 @@ main-svg
 
 
 
-  .shape1 {
-    width:600px;/*横幅*/
-    height: 600px;/*縦幅*/
-    background:#A1CBED;/*背景色*/
-    position: absolute;
-    right: 10px;
-    top: 500px;
-    z-index: -1;
-    animation: fluidrotate 20s ease 0s infinite;/*アニメーションの設定*/
-    @keyframes fluidrotate {  
-      0%, 100% {
-          border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
-      }
-      14% {
-          border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
-      }
-      28% {
-          border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
-      }
-      42% {
-          border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
-      }
-      56% {
-          border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
-      }
-      70% {
-          border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
-      }
-      84% {
-          border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
-      }
-      }
-  }
-  .shape2 {
-    width:300px;/*横幅*/
-    height: 250px;/*縦幅*/
-    background:#B1DEEE;/*背景色*/
-    position: absolute;
-    left: 10px;
-    top: 850px;
-    z-index: -1;
-    animation: fluidrotate 20s ease 0s infinite;/*アニメーションの設定*/
-    @keyframes fluidrotate {  
-      0%, 100% {
-          border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
-      }
-      14% {
-          border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
-      }
-      28% {
-          border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
-      }
-      42% {
-          border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
-      }
-      56% {
-          border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
-      }
-      70% {
-          border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
-      }
-      84% {
-          border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
-      }
-      }
-  }
+.shape1 {
+  width:600px;/*横幅*/
+  height: 600px;/*縦幅*/
+  background:#A1CBED;/*背景色*/
+  position: absolute;
+  right: 10px;
+  top: 500px;
+  z-index: -1;
+  animation: fluidrotate 20s ease 0s infinite;/*アニメーションの設定*/
+  @keyframes fluidrotate {  
+    0%, 100% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    14% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    28% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    42% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    56% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    70% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    84% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+    }
+}
+.shape2 {
+  width:300px;/*横幅*/
+  height: 250px;/*縦幅*/
+  background:#B1DEEE;/*背景色*/
+  position: absolute;
+  left: 10px;
+  top: 850px;
+  z-index: -1;
+  animation: fluidrotate 20s ease 0s infinite;/*アニメーションの設定*/
+  @keyframes fluidrotate {  
+    0%, 100% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    14% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    28% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    42% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    56% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    70% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    84% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+    }
+}
 .shape3 {
   width: 300px;
   height: 300px;
@@ -1227,7 +1214,6 @@ main-svg
     }
     }
 }
-
 
 
 

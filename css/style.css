@@ -475,7 +475,9 @@ card-animation
     transform: scale(0.95);
   }
 }
-/*========= 流れるテキスト ===============*/
+/***************************************************
+流れるテキスト
+**************************************************/
 /*全共通*/
 .slide-in {
   overflow: hidden;
@@ -495,6 +497,7 @@ card-animation
   animation-name: slideTextX100;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-delay: 0.5s;
   opacity: 0;
 }
 
@@ -512,6 +515,7 @@ card-animation
   animation-name: slideTextX-100;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-delay: 0.5s;
   opacity: 0;
 }
 
@@ -525,7 +529,9 @@ card-animation
     opacity: 1;
   }
 }
-/*========= テキストを滑らかに出現させるためのCSS ===============*/
+/***************************************************
+テキストを滑らかに出現させるためのCSS
+**************************************************/
 span.smoothText {
   overflow: hidden;
   display: block;
