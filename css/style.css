@@ -435,11 +435,10 @@ body {
   font-size: 1rem;
   color: var(--color-inner-text);
   -ms-overflow-style: none; /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
-  scrollbar-width: none; /*Firefoxへの対応*/
 }
 
 body::-webkit-scrollbar { /*Google Chrome、Safariへの対応*/
-  display: none;
+  display: inline-block;
 }
 
 /***************************************************
@@ -530,6 +529,7 @@ card-animation
   animation-name: slideTextY100;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
+  animation-delay: 0.5s;
   opacity: 0;
 }
 
@@ -605,15 +605,28 @@ main-ttl
 **************************************************/
 @keyframes animate-svg-stroke-1 {
   0% {
-    stroke-dashoffset: 2768.0087890625px;
-    stroke-dasharray: 2768.0087890625px;
+    stroke-dashoffset: 6092.90234375px;
+    stroke-dasharray: 6092.90234375px;
   }
   100% {
-    stroke-dashoffset: 5536.017578125px;
-    stroke-dasharray: 2768.0087890625px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 6092.90234375px;
   }
 }
-@keyframes animate-svg-fill-1 {
+.svg-elem-1 {
+  animation: animate-svg-stroke-1 2s ease-in-out 0s both, animate-svg-fill-1 0.8s ease-in-out 0.5s both;
+}
+@keyframes animate-svg-stroke-2 {
+  0% {
+    stroke-dashoffset: 6092.90234375px;
+    stroke-dasharray: 6092.90234375px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 6092.90234375px;
+  }
+}
+@keyframes animate-svg-fill-2 {
   0% {
     fill: transparent;
   }
@@ -621,8 +634,8 @@ main-ttl
     fill: rgb(33, 66, 105);
   }
 }
-.svg-elem-1 {
-  animation: animate-svg-stroke-1 2s ease-in-out 0s both, animate-svg-fill-1 2s ease-in-out 1.5s both;
+.svg-elem-2 {
+  animation: animate-svg-stroke-2 2s ease-in-out 0.5s both, animate-svg-fill-2 0.8s ease-in-out 0.6s both;
 }
 
 .container {
@@ -1037,10 +1050,7 @@ body main .about .container {
 body main .about .container .flex-wrapper {
   padding-bottom: 64px;
 }
-body main .about .container .flex-wrapper .inner-flex-box .text-box {
-  text-align: center;
-}
-body main .about .container .flex-wrapper .inner-flex-box .text-box .inner-icon {
+body main .about .container .flex-wrapper .inner-flex-box .inner-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1048,8 +1058,8 @@ body main .about .container .flex-wrapper .inner-flex-box .text-box .inner-icon 
        column-gap: 8px;
   padding-bottom: 40px;
 }
-body main .about .container .flex-wrapper .inner-flex-box .text-box .inner-icon img {
-  width: 30px;
+body main .about .container .flex-wrapper .inner-flex-box .inner-icon img {
+  width: 50px;
   margin: 0;
 }
 body main .about .container .flex-wrapper img:nth-child(2) {
@@ -1093,7 +1103,7 @@ body main .about .container .flex-wrapper:last-child .inner-flex-box .inner-icon
   padding-bottom: 40px;
 }
 body main .about .container .flex-wrapper:last-child .inner-flex-box .inner-icon img {
-  width: 30px;
+  width: 50px;
   margin: 0;
   padding: 0;
 }
@@ -1436,27 +1446,6 @@ body footer .container small {
   /***************************************************
   main-svg
    **************************************************/
-  @keyframes animate-svg-stroke-1 {
-    0% {
-      stroke-dashoffset: 6537.2407226563px;
-      stroke-dasharray: 6537.2407226563px;
-    }
-    100% {
-      stroke-dashoffset: 13074.4814453125px;
-      stroke-dasharray: 6537.2407226563px;
-    }
-  }
-  @keyframes animate-svg-fill-1 {
-    0% {
-      fill: transparent;
-    }
-    100% {
-      fill: rgb(33, 66, 105);
-    }
-  }
-  .svg-elem-1 {
-    animation: animate-svg-stroke-1 2s ease-in-out 0s both, animate-svg-fill-1 2s ease-in-out 2s both;
-  }
   .shape1 {
     width: 600px; /*横幅*/
     height: 600px; /*縦幅*/
@@ -1589,10 +1578,11 @@ body footer .container small {
   body header .container .flex-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-top: 0;
   }
   body header .container .flex-wrapper img {
-    width: 200px;
+    width: 100px;
   }
   body header .container .flex-wrapper ul {
     display: flex;
@@ -1621,14 +1611,15 @@ body footer .container small {
     border: 2px solid var(--color-accentA);
     box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
     background: #FFF;
-    padding: 12px 24px;
+    padding: 18px 24px;
     margin-left: 0;
     margin-top: 0;
   }
   body header .container .flex-wrapper ul .btn-wrapper-pc form {
     display: flex;
-    -moz-column-gap: 20px;
-         column-gap: 20px;
+    -moz-column-gap: 26px;
+         column-gap: 26px;
+    align-items: baseline;
   }
   body header .container .flex-wrapper ul .btn-wrapper-pc form input {
     font-size: 1.125rem;
@@ -1931,7 +1922,7 @@ body footer .container small {
     padding-bottom: 40px;
   }
   body main .about .container-pc .flex-wrapper .inner-flex-box .inner-icon img {
-    width: 30px;
+    width: 50px;
     margin: 0;
   }
   body main .about .container-pc .flex-wrapper .inner-flex-box p {
@@ -1943,7 +1934,7 @@ body footer .container small {
     padding-bottom: 0;
     line-height: 2;
     text-align: left;
-    margin-left: 54px;
+    margin-left: 74px;
   }
   body main .about .container-pc .flex-wrapper .inner-flex-box .inner-text {
     color: var(--color-inner-text);
@@ -1975,7 +1966,7 @@ body footer .container small {
     padding-bottom: 0;
   }
   body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon img {
-    width: 30px;
+    width: 50px;
     margin: 0;
     padding: 0;
   }

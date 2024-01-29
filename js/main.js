@@ -1,4 +1,16 @@
 
+$(function(){
+    $(window).scroll(function (){
+        $('.svg-elem-1').each(function(){
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > position - windowHeight + 1){
+                $(this).addClass('active');
+            }
+        });
+    });
+});
 
 function slideAnime(){
 //====左に動くアニメーションここから===
