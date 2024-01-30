@@ -925,7 +925,7 @@ body main .kv-pc {
 }
 body main .feature .container {
   background-image: url(../img/Feature.svg);
-  background-size: 200px auto;
+  background-size: 300px auto;
   background-position: center 30px;
   margin-bottom: 64px;
 }
@@ -965,7 +965,7 @@ body main .problem {
 body main .problem .container {
   background-image: url(../img/Problem.svg);
   background-size: 360px auto;
-  background-position: center 0;
+  background-position: center 30px;
 }
 body main .problem .container h3 {
   color: #FFF;
@@ -2269,5 +2269,53 @@ body footer .container small {
   }
   body footer .container small {
     padding-top: 40px;
+  }
+}
+/***************************************************
+ここらかprivacyのページ
+ **************************************************/
+.privacy .container {
+  background-image: url(../img/Privacy.svg);
+  background-size: 300px;
+  background-position: center 100px;
+  padding-top: 124px;
+  padding-bottom: 64px;
+}
+.privacy .container li {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  line-height: 24px;
+}
+.privacy .container li span {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 12px;
+}
+.privacy .container li:not(li:nth-child(8)) {
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 960px) {
+  .privacy .container {
+    background-image: url(../img/Privacy.svg);
+    background-size: 800px;
+    background-position: 180px 110px;
+    padding-top: 192px;
+    padding-bottom: 192px;
+  }
+  .privacy .container li {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    line-height: 24px;
+  }
+  .privacy .container li span {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding-bottom: 12px;
+  }
+  .privacy .container li:not(li:nth-child(8)) {
+    padding-bottom: 80px;
   }
 }/*# sourceMappingURL=style.css.map */

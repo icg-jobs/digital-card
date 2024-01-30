@@ -593,7 +593,7 @@ body {
   .feature {
     .container {
       background-image: url(../img/Feature.svg);
-      background-size: 200px auto;
+      background-size: 300px auto;
       background-position: center 30px;
       margin-bottom: 64px;
       .feature1,.feature2,.feature3,.feature4 {
@@ -633,7 +633,7 @@ body {
     .container {
       background-image: url(../img/Problem.svg);
       background-size: 360px auto;
-      background-position: center 0;
+      background-position: center 30px;
         h3 {
           color: #FFF;
           text-align: center;
@@ -1115,8 +1115,6 @@ body {
     }
   }
 }
-
-
 
 // ここからPC版------------------
 
@@ -2010,5 +2008,61 @@ body {
       }
     }
   }
+  }
+}
+
+/***************************************************
+ここらかprivacyのページ
+ **************************************************/
+
+.privacy {
+  .container {
+    background-image: url(../img/Privacy.svg);
+    background-size: 300px;
+    background-position: center 100px;
+    padding-top: 124px;
+    padding-bottom: 64px;
+    li {
+      font-size: rem(14);
+      letter-spacing: 2px;
+      line-height: 24px;
+      span {
+        display: inline-block;
+        font-size: rem(16);
+        font-weight: 600;
+        padding-bottom: 12px;
+      }
+    }
+    li:not(li:nth-child(8)) {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 960px) {
+  .privacy {
+    .container {
+      background-image: url(../img/Privacy.svg);
+      background-size: 800px;
+      background-position: 180px 110px;
+      padding-top: 192px;
+      padding-bottom: 192px;
+      li {
+        font-size: rem(16);
+        letter-spacing: 2px;
+        line-height: 24px;
+        span {
+          display: inline-block;
+          font-size: rem(18);
+          font-weight: 600;
+          padding-bottom: 12px;
+        }
+      }
+      li:not(li:nth-child(8)) {
+        padding-bottom: 80px;
+      }
+    }
   }
 }
