@@ -639,7 +639,7 @@ main-ttl
 }
 
 .container {
-  padding: 32px 16px 0 16px;
+  padding: 64px 16px 0 16px;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -925,8 +925,8 @@ body main .kv-pc {
 }
 body main .feature .container {
   background-image: url(../img/Feature.svg);
-  background-size: 300px auto;
-  background-position: left 30px;
+  background-size: 200px auto;
+  background-position: center 30px;
   margin-bottom: 64px;
 }
 body main .feature .container .feature1, body main .feature .container .feature2, body main .feature .container .feature3, body main .feature .container .feature4 {
@@ -960,13 +960,12 @@ body main .feature .container .text-box .sns-icon {
   margin: 24px auto 0 auto;
 }
 body main .problem {
-  padding-top: 16px;
   background-color: var(--color-back);
 }
 body main .problem .container {
   background-image: url(../img/Problem.svg);
-  background-size: 300px auto;
-  background-position: left 30px;
+  background-size: 360px auto;
+  background-position: center 0;
 }
 body main .problem .container h3 {
   color: #FFF;
@@ -1004,13 +1003,10 @@ body main .problem p:last-child {
   letter-spacing: 0.0625rem;
   padding-bottom: 64px;
 }
-body main .how {
-  margin-top: 32px;
-}
 body main .how .container {
   background-image: url(../img/How\ To\ Use.svg);
-  background-size: 300px auto;
-  background-position: left 0;
+  background-size: 400px auto;
+  background-position: center 40px;
 }
 body main .how .container h2 {
   color: var(--color-subtitle-text);
@@ -1036,7 +1032,6 @@ body main .how .container .flex-wrapper .inner-box p {
   padding-bottom: 64px;
 }
 body main .about {
-  padding-top: 32px;
   background-color: var(--color-back);
 }
 body main .about .container-pc {
@@ -1044,8 +1039,8 @@ body main .about .container-pc {
 }
 body main .about .container {
   background-image: url(../img/About.svg);
-  background-size: 300px auto;
-  background-position: left 10px;
+  background-size: 200px auto;
+  background-position: center 30px;
 }
 body main .about .container .flex-wrapper {
   padding-bottom: 64px;
@@ -1137,13 +1132,10 @@ body main .about .container .flex-wrapper:last-child .text-box .inner-text-box s
   font-size: 3rem;
   font-weight: 800;
 }
-body main .order {
-  margin-top: 32px;
-}
 body main .order .container {
   background-image: url(../img/Order.svg);
-  background-size: 300px auto;
-  background-position: left 0;
+  background-size: 200px auto;
+  background-position: center 30px;
 }
 body main .order .container .order-text {
   font-size: 0.875rem;
@@ -1252,13 +1244,12 @@ body main .order .flex-wrapper form .submit-btn img {
   width: 10px;
 }
 body main .question {
-  padding-top: 32px;
   background-color: var(--color-back);
 }
 body main .question .container {
   background-image: url(../img/Question.svg);
-  background-size: 300px auto;
-  background-position: left 0;
+  background-size: 360px auto;
+  background-position: center 30px;
 }
 body main .question .container .read-more {
   padding-bottom: 64px;
@@ -1390,13 +1381,12 @@ body main .question .container .read-more button.more.on-click::after {
   content: "閉じる";
 }
 body main .company {
-  margin-top: 32px;
   padding-bottom: 64px;
 }
 body main .company .container {
   background-image: url(../img/Company.svg);
-  background-size: 300px auto;
-  background-position: left 0;
+  background-size: 360px auto;
+  background-position: center 30px;
 }
 body main .company .container p {
   letter-spacing: 0.125rem;
@@ -1405,7 +1395,7 @@ body main .company .container p {
 body main .company .container .flex-wrapper img {
   display: block;
   width: 80px;
-  margin: 64px auto;
+  margin: 0 auto 64px auto;
 }
 body main .company .container .flex-wrapper .inner-flex-wrapper {
   display: table;
@@ -1689,8 +1679,8 @@ body footer .container small {
   }
   body main .feature .container {
     background-image: url(../img/Feature.svg);
-    background-size: 50% 40%;
-    background-position: 30% -20%;
+    background-size: 800px;
+    background-position: 180px 100px;
   }
   body main .feature .container .sub-container {
     max-width: 1080px;
@@ -1787,14 +1777,13 @@ body footer .container small {
     margin: 128px 0;
   }
   body main .problem {
-    margin-top: 0;
     padding-top: 0;
     background-color: var(--color-back);
   }
   body main .problem .container {
     background-image: url(../img/Problem.svg);
-    background-size: 50% 40%;
-    background-position: 30% -10%;
+    background-size: 800px;
+    background-position: 180px 100px;
     padding: 195px 40px;
   }
   body main .problem .container .pc-flex {
@@ -1847,13 +1836,10 @@ body footer .container small {
   body main .problem .container p:last-child .br-pc {
     display: none;
   }
-  body main .how {
-    margin-top: 0;
-  }
   body main .how .container {
     background-image: url(../img/How\ To\ Use.svg);
-    background-size: 50% 40%;
-    background-position: 30% -10%;
+    background-size: 800px;
+    background-position: 180px 100px;
   }
   body main .how .container h2 {
     color: var(--color-subtitle-text);
@@ -1889,7 +1875,6 @@ body footer .container small {
     padding-bottom: 0;
   }
   body main .about {
-    padding-top: 32px;
     background-color: var(--color-back);
   }
   body main .about .container {
@@ -1899,8 +1884,8 @@ body footer .container small {
     display: block;
     padding: 195px 180px;
     background-image: url(../img/About.svg);
-    background-size: 50% 40%;
-    background-position: 30% -20%;
+    background-size: 800px;
+    background-position: 180px 100px;
     background-repeat: no-repeat;
   }
   body main .about .container-pc .flex-wrapper {
@@ -2005,13 +1990,10 @@ body footer .container small {
     font-size: 3.75rem;
     font-weight: 800;
   }
-  body main .order {
-    margin-top: 32px;
-  }
   body main .order .container {
     background-image: url(../img/Order.svg);
-    background-size: 50% 40%;
-    background-position: 30% -15%;
+    background-size: 800px;
+    background-position: 180px 100px;
   }
   body main .order .container .order-text {
     text-align: center;
@@ -2125,8 +2107,8 @@ body footer .container small {
   }
   body main .question .container {
     background-image: url(../img/Question.svg);
-    background-size: 50% 40%;
-    background-position: 30% 0;
+    background-size: 800px;
+    background-position: 180px 100px;
   }
   body main .question .container .read-more {
     padding: 0;
@@ -2225,9 +2207,6 @@ body footer .container small {
     -moz-column-gap: 8px;
          column-gap: 8px;
   }
-  body main .question .container .read-more .txt-hide .accordion-area li:first-child {
-    margin-top: 0;
-  }
   body main .question .container .read-more button.more {
     width: 320px;
     padding-top: 64px;
@@ -2241,13 +2220,12 @@ body footer .container small {
     content: "閉じる";
   }
   body main .company {
-    margin-top: 32px;
     padding-bottom: 0px;
   }
   body main .company .container {
     background-image: url(../img/Company.svg);
-    background-size: 50% 40%;
-    background-position: 30% 0;
+    background-size: 800px;
+    background-position: 180px 100px;
   }
   body main .company .container p {
     font-size: 1.125rem;
@@ -2258,7 +2236,6 @@ body footer .container small {
     justify-content: center;
     -moz-column-gap: 240px;
          column-gap: 240px;
-    padding-top: 128px;
   }
   body main .company .container .flex-wrapper img {
     display: block;

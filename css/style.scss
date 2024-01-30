@@ -311,7 +311,7 @@ main-ttl
 
 
 .container {
-  padding: 32px 16px 0 16px;
+  padding: 64px 16px 0 16px;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -593,8 +593,8 @@ body {
   .feature {
     .container {
       background-image: url(../img/Feature.svg);
-      background-size: 300px auto;
-      background-position: left 30px;
+      background-size: 200px auto;
+      background-position: center 30px;
       margin-bottom: 64px;
       .feature1,.feature2,.feature3,.feature4 {
         display: block;
@@ -629,12 +629,11 @@ body {
     }
   }
   .problem {
-    padding-top: 16px;
     background-color: var(--color-back);
     .container {
       background-image: url(../img/Problem.svg);
-      background-size: 300px auto;
-      background-position: left 30px;
+      background-size: 360px auto;
+      background-position: center 0;
         h3 {
           color: #FFF;
           text-align: center;
@@ -675,11 +674,10 @@ body {
     }
 
   .how {
-    margin-top: 32px;
     .container {
       background-image: url(../img/How\ To\ Use.svg);
-      background-size: 300px auto;
-      background-position: left 0;
+      background-size: 400px auto;
+      background-position: center 40px;
       h2 {
         color: var(--color-subtitle-text);
       }
@@ -710,15 +708,14 @@ body {
     }
   }
   .about {
-    padding-top: 32px;
     background-color: var(--color-back);
     .container-pc {
       display: none;
     }
     .container {
       background-image: url(../img/About.svg);
-      background-size: 300px auto;
-      background-position: left 10px;
+      background-size: 200px auto;
+      background-position: center 30px;
       .flex-wrapper {
         padding-bottom: 64px;
         .inner-flex-box {
@@ -816,11 +813,10 @@ body {
     }
   }
   .order {
-    margin-top: 32px;
     .container {
       background-image: url(../img/Order.svg);
-      background-size: 300px auto;
-      background-position: left 0;
+      background-size: 200px auto;
+      background-position: center 30px;
       .order-text {
         font-size: rem(14);
         font-weight: 400;
@@ -921,12 +917,11 @@ body {
     }
   }
   .question {
-    padding-top: 32px;
     background-color: var(--color-back);
     .container {
         background-image: url(../img/Question.svg);
-        background-size: 300px auto;
-        background-position: left 0;
+        background-size: 360px auto;
+        background-position: center 30px;
       .read-more{
         padding-bottom: 64px;
       .txt-show {
@@ -1065,12 +1060,11 @@ body {
   }
   }
   .company {
-    margin-top: 32px;
     padding-bottom: 64px;
     .container {
       background-image: url(../img/Company.svg);
-      background-size: 300px auto;
-      background-position: left 0;
+      background-size: 360px auto;
+      background-position: center 30px;
       p {
         letter-spacing: rem(2);
         line-height: 2;
@@ -1079,7 +1073,7 @@ body {
         img {
           display: block;
           width: 80px;
-          margin: 64px auto;
+          margin: 0 auto 64px auto;
           }
         .inner-flex-wrapper {
           display: table;
@@ -1385,8 +1379,8 @@ body {
   .feature {
     .container {
       background-image: url(../img/Feature.svg);
-      background-size: 50% 40%;
-      background-position: 30% -20%;
+      background-size: 800px;
+      background-position: 180px 100px;
       .sub-container {
         max-width: 1080px;
         margin: 0 auto;
@@ -1482,13 +1476,12 @@ body {
     }
   }
   .problem {
-    margin-top: 0;
     padding-top: 0;
     background-color: var(--color-back);
     .container {
       background-image: url(../img/Problem.svg);
-      background-size: 50% 40%;
-      background-position: 30% -10%;
+      background-size: 800px;
+      background-position: 180px 100px;
       padding: 195px 40px;
       .pc-flex {
         display: flex;
@@ -1542,11 +1535,10 @@ body {
     }
   }
   .how {
-    margin-top: 0;
     .container {
       background-image: url(../img/How\ To\ Use.svg);
-      background-size: 50% 40%;
-      background-position: 30% -10%;
+      background-size: 800px;
+      background-position: 180px 100px;
       h2 {
         color: var(--color-subtitle-text);
       }
@@ -1582,7 +1574,6 @@ body {
     }
   }
   .about {
-    padding-top: 32px;
     background-color: var(--color-back);
     .container {
       display: none;
@@ -1591,8 +1582,8 @@ body {
       display: block;
       padding: 195px 180px;
       background-image: url(../img/About.svg);
-      background-size: 50% 40%;
-      background-position: 30% -20%;
+      background-size: 800px;
+      background-position: 180px 100px;
       background-repeat: no-repeat;
       .flex-wrapper {
         display: flex;
@@ -1702,11 +1693,10 @@ body {
     }
   }
   .order {
-    margin-top: 32px;
     .container {
       background-image: url(../img/Order.svg);
-      background-size: 50% 40%;
-      background-position: 30% -15%;
+      background-size: 800px;
+      background-position: 180px 100px;
       .order-text {
         text-align: center;
         font-size: rem(18);
@@ -1844,8 +1834,8 @@ body {
     background-color: var(--color-back);
     .container {
         background-image: url(../img/Question.svg);
-        background-size: 50% 40%;
-        background-position: 30% 0;
+        background-size: 800px;
+        background-position: 180px 100px;
       .read-more {
         padding: 0;
         .txt-show {
@@ -1944,9 +1934,9 @@ body {
                   }
                 }
             }
-            li:first-child {
-              margin-top: 0;
-            }
+            // li:first-child {
+            //   margin-top: 0;
+            // }
           }
         }
         // さらに表示*************
@@ -1967,12 +1957,11 @@ body {
     }
   }
   .company {
-    margin-top: 32px;
     padding-bottom: 0px;
     .container {
       background-image: url(../img/Company.svg);
-      background-size: 50% 40%;
-      background-position: 30% 0;
+      background-size: 800px;
+      background-position: 180px 100px;
       p {
         font-size: rem(18);
         text-align: center;
@@ -1981,7 +1970,6 @@ body {
         display: flex;
         justify-content: center;
         column-gap: 240px;
-        padding-top: 128px;
         img {
           display: block;
           width: 250px;
