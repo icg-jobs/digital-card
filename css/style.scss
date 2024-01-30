@@ -2036,6 +2036,23 @@ body {
     li:not(li:nth-child(8)) {
       padding-bottom: 40px;
     }
+    .back-btn a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 8px;
+      width: fit-content;
+      margin: 0 auto;
+      padding-top: 40px;
+      img {
+        width: 14px;
+      }
+      p {
+        color: var(--color-subtitle-text);
+        font-size: rem(12);
+        font-weight: 600;
+      }
+    }
   }
 }
 
@@ -2044,24 +2061,30 @@ body {
 @media screen and (min-width: 960px) {
   .privacy {
     .container {
-      background-image: url(../img/Privacy.svg);
       background-size: 800px;
       background-position: 180px 110px;
       padding-top: 192px;
       padding-bottom: 192px;
       li {
         font-size: rem(16);
-        letter-spacing: 2px;
-        line-height: 24px;
         span {
-          display: inline-block;
           font-size: rem(18);
-          font-weight: 600;
-          padding-bottom: 12px;
         }
       }
       li:not(li:nth-child(8)) {
         padding-bottom: 80px;
+      }
+      .back-btn a{
+        column-gap: 8px;
+        width: fit-content;
+        margin: 0 auto;
+        padding-top: 80px;
+        img {
+          width: 14px;
+        }
+        p {
+          font-size: rem(14);
+        }
       }
     }
   }
