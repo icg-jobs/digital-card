@@ -32,25 +32,6 @@ body::-webkit-scrollbar{/*Google Chrome、Safariへの対応*/
 
 
 /***************************************************
-card-animation
-**************************************************/
-.animation {
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  animation-duration: 1.5s;
-}
-.card {
-  animation-name: poyopoyo;
-}
-@keyframes poyopoyo {
-  0%, 40%, 60%, 80% {
-    transform: scale(1.0);
-  }
-  50%, 70% {
-    transform: scale(0.95);
-  }
-}
-/***************************************************
 流れるテキスト1
 **************************************************/
 /*全共通*/
@@ -304,12 +285,6 @@ main-ttl
               animate-svg-fill-2 0.8s ease-in-out 0.6s both;
 }
 
-
-
-
-
-
-
 .container {
   padding: 64px 16px 0 16px;
   background-repeat: no-repeat;
@@ -531,29 +506,38 @@ body {
         background-size: 100%;
         background-position: bottom;
         .main-wrapper1 {
-          padding: 64px 0 40px 0;
-          h1 {
-            color: var(--color-subtitle-text);
-            text-align: center;
-            text-shadow: 2px 2px 0px var(--color-white);
-            font-size: rem(40);
-            font-style: normal;
-            font-weight: 900;
-            line-height: 75px;
-            letter-spacing: rem(6.4);
+          padding-top: 64px;
+          /*===================================
+          スライダーのためのcss
+          ===================================*/
+          .slider {
+          position:relative;
+          z-index: 1;
+          /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
           }
-          .main-ttl {
-            width: 90%;
-            max-width: 400px;
-            display: block;
-            margin: 0 auto;
+          /*　背景画像設定　*/
+          .slider-item01 {
+          background:url(../img/card_group1.png);
           }
-          .card {
-            width: 60%;
-            padding-top: 40px;
-            margin: 0 auto;
-            display: block;
+          .slider-item02 {
+          background:url(../img/card_group2.png);
           }
+          .slider-item03 {
+          background:url(../img/card_group3.png);
+          }
+          .slider-item {
+          width: 50%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+          height:50vh;/*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+          background-repeat: no-repeat;/*背景画像をリピートしない*/
+          background-position: center;/*背景画像の位置を中央に*/
+          background-size: 100%;/*背景画像が.slider-item全体を覆い表示*/
+          }
+          .slider-item:nth-child(2) {
+            height: 50vh;
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 110%;
+            }
         }
         .main-wrapper2 {
           padding-bottom: 64px;
@@ -1231,7 +1215,7 @@ main-svg
 
 
 .container {
-  padding: 192px 180px;
+  padding: 192px 128px;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -1321,19 +1305,44 @@ body {
       .container {
         padding-top: 128px;
         display: flex;
-        column-gap: 120px;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         background-image: url(../img/Subtract.svg);
         background-repeat: no-repeat;
         background-size: 110%;
         background-position: bottom left;
         .main-wrapper1 {
-          .card {
-            width: 100%;
-            max-width: 500px;
-            padding-bottom: 80px;
+          max-width: 60%;
+          /*===================================
+          スライダーのためのcss
+          ===================================*/
+          .slider {
+          position:relative;
+          z-index: 1;
+          /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
           }
+          /*　背景画像設定　*/
+          .slider-item01 {
+          background:url(../img/card_group1.png);
+          }
+          .slider-item02 {
+          background:url(../img/card_group2.png);
+          }
+          .slider-item03 {
+          background:url(../img/card_group3.png);
+          }
+          .slider-item {
+          height:55vh;/*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+          background-repeat: no-repeat;/*背景画像をリピートしない*/
+          background-position: center;/*背景画像の位置を中央に*/
+          background-size: 100%;/*背景画像が.slider-item全体を覆い表示*/
+          }
+          .slider-item:nth-child(2) {
+            height: 55vh;
+            background-repeat: no-repeat;
+            background-position: center right;
+            background-size: 110%;
+            }
           p {
             color: var(--color-white);
             font-size: rem(14);
@@ -1345,7 +1354,7 @@ body {
             text-align: center;
             padding: 8px 40px;
             width: fit-content;
-            margin: 0 auto;
+            margin: 40px auto 0;
           }
           .logo-sub {
             width: 300px;

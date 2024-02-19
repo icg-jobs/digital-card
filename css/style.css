@@ -442,27 +442,6 @@ body::-webkit-scrollbar { /*Google Chrome、Safariへの対応*/
 }
 
 /***************************************************
-card-animation
-**************************************************/
-.animation {
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  animation-duration: 1.5s;
-}
-
-.card {
-  animation-name: poyopoyo;
-}
-
-@keyframes poyopoyo {
-  0%, 40%, 60%, 80% {
-    transform: scale(1);
-  }
-  50%, 70% {
-    transform: scale(0.95);
-  }
-}
-/***************************************************
 流れるテキスト1
 **************************************************/
 /*全共通*/
@@ -865,29 +844,38 @@ body main .kv .container {
   background-position: bottom;
 }
 body main .kv .container .main-wrapper1 {
-  padding: 64px 0 40px 0;
+  padding-top: 64px;
+  /*===================================
+  スライダーのためのcss
+  ===================================*/
+  /*　背景画像設定　*/
 }
-body main .kv .container .main-wrapper1 h1 {
-  color: var(--color-subtitle-text);
-  text-align: center;
-  text-shadow: 2px 2px 0px var(--color-white);
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 75px;
-  letter-spacing: 0.4rem;
+body main .kv .container .main-wrapper1 .slider {
+  position: relative;
+  z-index: 1;
+  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
 }
-body main .kv .container .main-wrapper1 .main-ttl {
-  width: 90%;
-  max-width: 400px;
-  display: block;
-  margin: 0 auto;
+body main .kv .container .main-wrapper1 .slider-item01 {
+  background: url(../img/card_group1.png);
 }
-body main .kv .container .main-wrapper1 .card {
-  width: 60%;
-  padding-top: 40px;
-  margin: 0 auto;
-  display: block;
+body main .kv .container .main-wrapper1 .slider-item02 {
+  background: url(../img/card_group2.png);
+}
+body main .kv .container .main-wrapper1 .slider-item03 {
+  background: url(../img/card_group3.png);
+}
+body main .kv .container .main-wrapper1 .slider-item {
+  width: 50%; /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+  height: 50vh; /*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  background-repeat: no-repeat; /*背景画像をリピートしない*/
+  background-position: center; /*背景画像の位置を中央に*/
+  background-size: 100%; /*背景画像が.slider-item全体を覆い表示*/
+}
+body main .kv .container .main-wrapper1 .slider-item:nth-child(2) {
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 110%;
 }
 body main .kv .container .main-wrapper2 {
   padding-bottom: 64px;
@@ -1536,7 +1524,7 @@ body footer .container small {
     }
   }
   .container {
-    padding: 192px 180px;
+    padding: 192px 128px;
     background-repeat: no-repeat;
     position: relative;
   }
@@ -1627,19 +1615,45 @@ body footer .container small {
   body main .kv-pc .container {
     padding-top: 128px;
     display: flex;
-    -moz-column-gap: 120px;
-         column-gap: 120px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-image: url(../img/Subtract.svg);
     background-repeat: no-repeat;
     background-size: 110%;
     background-position: bottom left;
   }
-  body main .kv-pc .container .main-wrapper1 .card {
-    width: 100%;
-    max-width: 500px;
-    padding-bottom: 80px;
+  body main .kv-pc .container .main-wrapper1 {
+    max-width: 60%;
+    /*===================================
+    スライダーのためのcss
+    ===================================*/
+    /*　背景画像設定　*/
+  }
+  body main .kv-pc .container .main-wrapper1 .slider {
+    position: relative;
+    z-index: 1;
+    /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+  }
+  body main .kv-pc .container .main-wrapper1 .slider-item01 {
+    background: url(../img/card_group1.png);
+  }
+  body main .kv-pc .container .main-wrapper1 .slider-item02 {
+    background: url(../img/card_group2.png);
+  }
+  body main .kv-pc .container .main-wrapper1 .slider-item03 {
+    background: url(../img/card_group3.png);
+  }
+  body main .kv-pc .container .main-wrapper1 .slider-item {
+    height: 55vh; /*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+    background-repeat: no-repeat; /*背景画像をリピートしない*/
+    background-position: center; /*背景画像の位置を中央に*/
+    background-size: 100%; /*背景画像が.slider-item全体を覆い表示*/
+  }
+  body main .kv-pc .container .main-wrapper1 .slider-item:nth-child(2) {
+    height: 55vh;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 110%;
   }
   body main .kv-pc .container .main-wrapper1 p {
     color: var(--color-white);
@@ -1653,7 +1667,7 @@ body footer .container small {
     padding: 8px 40px;
     width: -moz-fit-content;
     width: fit-content;
-    margin: 0 auto;
+    margin: 40px auto 0;
   }
   body main .kv-pc .container .main-wrapper1 .logo-sub {
     width: 300px;

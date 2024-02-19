@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -315,7 +316,12 @@
                             </g>
                             </g>
                     </svg>
-                    <img src="img/main-kv.png" alt="カードのイメージ画像" class="card animation">
+                    <!-- <img src="img/main-kv.png" alt="カードのイメージ画像" class="card animation"> -->
+                    <ul class="slider">
+                        <li class="slider-item slider-item01"></li>
+                        <li class="slider-item slider-item02"></li>
+                        <li class="slider-item slider-item03"></li>
+                    </ul>
                 </div>
                 <div class="main-wrapper2">
                     <div class="inner-box">
@@ -330,12 +336,16 @@
         <section class="kv-pc">
             <div class="container">
                 <div class="main-wrapper1">
-                    <img src="img/main-kv.png" alt="カードのイメージ画像" class="card animation">
+                    <ul class="slider">
+                        <li class="slider-item slider-item01"></li>
+                        <li class="slider-item slider-item02"></li>
+                        <li class="slider-item slider-item03"></li>
+                    </ul>
                     <p>非接触型 デジタル名刺</p>
                     <img src="img/logo.svg" alt="サブのロゴ" class="logo-sub">
                 </div>
                 <div class="main-wrapper2">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="120%" height="100%" viewBox="0 0 537.2 309.6" style="enable-background:new 0 0 537.2 309.6;" xml:space="preserve">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 537.2 309.6" style="enable-background:new 0 0 537.2 309.6;" xml:space="preserve">
                         <style type="text/css">
                             .st0{fill:none;stroke:#214269;stroke-miterlimit:10;}
                             .st1{fill:#214269;}
@@ -617,8 +627,16 @@
                 <div class="shape3"></div>
                 <div class="shape4"></div>
                 <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">
-                    カザスト 4つの特徴</span></span></h2>
+                    カザスト 5つの特徴</span></span></h2>
                 <div class="sub-container">
+                    <div class="pc-wrapper2 sub">
+                        <img src="img/feature0.png" class="feature2" alt="特徴のイメージ画像0">
+                        <div class="text-box"><span class="slide-in downAnime"><span class="slide-in_inner downAnimeInner">
+                            <h3><span class="sub-ttl">ORIGINAL DESIGN</span><br>
+                                デザインは全てオリジナル</h3>
+                            <p>カザストが1枚あれば、多くのSNS情報をほんの数秒で共有することが可能。</p>
+                        </div>
+                    </div>
                     <div class="pc-wrapper">
                         <img src="img/feature1.png" class="feature1" alt="特徴のイメージ画像1">
                         <div class="text-box"><span class="slide-in downAnime"><span class="slide-in_inner downAnimeInner">
@@ -1124,5 +1142,6 @@
     </footer>
 </body>
 <script src="js/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="js/main.js"></script>
 </html>
