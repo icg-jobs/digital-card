@@ -812,24 +812,25 @@ body {
     .flex-wrapper {
       form {
         .inner-flex-box {
-          width: 100%;
-          display: table;
-          table-layout: fixed;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           padding-bottom: 24px;
           dt {
             letter-spacing: rem(2);
-            display: table-cell;
             font-size: rem(14);
+            padding-bottom: 16px;
           }
           dd {
             margin-left: 0;
             .radio:nth-child(2) {
               margin: rem(24) 0;
             }
-            input,select {
+            input {
               border: .5px solid #AAAAAA;
               border-radius: 5px;
               padding: 16px;
+              width: 100%;
             }
             .name1 {
               margin-bottom: 10px;
@@ -837,44 +838,37 @@ body {
             label {
               line-height: 1.5;
               letter-spacing: 2px;
-              a {
-                color: var(--color-accentA);
-              }
             }
           }
         }
-        .inner-flex-box:nth-child(2),
-        .inner-flex-box:nth-child(3),
-        .inner-flex-box:nth-child(4),
-        .inner-flex-box:nth-child(5),
-        .inner-flex-box:nth-child(6),
-        .inner-flex-box:nth-child(7) {
-          display: block;
-          dt {
-            padding-bottom: 16px;
-          }
-          dd {
-            width: 100%;
-            input {
-              width: 100%;
-            }
+        .contents-box {
+          display: flex;
+          padding-bottom: 24px;
+          justify-content: space-between;
+          align-items: flex-start;
+          letter-spacing: rem(2);
+          font-size: rem(14);
+          textarea {
+            border: .5px solid #AAAAAA;
+            border-radius: 5px;
+            padding: 16px;
+            height: 160px;
           }
         }
-        .inner-flex-box:nth-child(4),
-        .inner-flex-box:nth-child(6) {
-          dd {
-            width: 100vw;
-            input {
-              width: 100px;
-            }
+        .privacy-box {     
+          display: flex;
+          column-gap: 60px;
+          padding-bottom: 24px; 
+          letter-spacing: rem(2);
+          font-size: rem(12);
+          input {
+            border: .5px solid #AAAAAA;
+            border-radius: 5px;
+            padding: 16px;
           }
+          a {
+            color: var(--color-accentA);
         }
-        .inner-flex-box:nth-child(8) {
-          dd {
-            display: flex;
-            align-items: center;
-            column-gap: 8px;
-          }
         }
         .submit-btn {
           margin: 0 auto 64px auto;
@@ -887,10 +881,10 @@ body {
           width: -moz-fit-content;
           width: fit-content;
           box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
-          input {
+          button {
             font-size: rem(12);
             font-weight: 500;
-            letter-spacing: rem(10);
+            letter-spacing: rem(2);
             color: var(--color-accentA);
           }
           img {
@@ -926,17 +920,9 @@ body {
                   cursor: pointer;
                   font-size:1rem;
                   font-weight: 500;
-                  padding: 16px 24px;
+                  padding: 32px 24px;
                   letter-spacing: 2px;
                   }
-                .down {
-                  width: 16px;
-                  transform: rotate(-180deg);
-                  margin-left: auto;
-                }
-                .down.active {
-                  transform: rotate(0deg);
-                }
               }
               /*アコーディオンで現れるエリア*/
             .inner-box2 {
@@ -983,14 +969,6 @@ body {
                   padding: 16px 24px;
                   letter-spacing: 2px;
                   }
-                .down {
-                  width: 16px;
-                  transform: rotate(-180deg);
-                  margin-left: auto;
-                }
-                .down.active {
-                  transform: rotate(0deg);
-                }
                 }
                 /*アコーディオンで現れるエリア*/
               .inner-box2 {
@@ -1717,39 +1695,13 @@ body {
       max-width: 1290px;
       form {
         .inner-flex-box {
-          display: table;
-          table-layout: fixed;
           padding-bottom: 40px;
-          width: 100%;
-          white-space: nowrap;
           dt {
             font-size: rem(18);
-            width: 40%;
-            padding-right: 40px;
-          }
-          dd {
-            width: 60%;
-            input,select {
-              border: .5px solid #AAAAAA;
-              border-radius: 5px;
-              padding: 16px 24px;
-            }
-          }
-        }
-        .inner-flex-box:nth-child(1) {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          dt {
             letter-spacing: rem(2);
           }
           dd {
-            display: flex;
-            justify-content: flex-start;
-            column-gap: 80px;
-            .radio {
-              margin: 0;
-            }
+            width: 400px;
             label {
               font-weight: 500;
               a {
@@ -1758,66 +1710,25 @@ body {
             }
           }
         }
-        .inner-flex-box:nth-child(2) {
-          dd {
-            input {
+        .contents-box {
+          padding-bottom: 40px;
+          font-size: rem(18);
+          dd{
+            width: 400px;
+            textarea {
               width: 100%;
+              border: .5px solid #AAAAAA;
+              border-radius: 5px;
+              padding: 16px 24px;
             }
           }
         }
-        .inner-flex-box:nth-child(3) {
+        .privacy-box {
+          justify-content: space-between;
+          padding-bottom: 40px;
+          font-size: rem(18);
           dd {
-            display: initial;
-            input {
-              width: 40%;
-            }
-            .name1 {
-              margin-bottom: 0;
-              margin-right: 16px;
-            }
-          }
-        }
-        .inner-flex-box:nth-child(4) {
-          dd {
-            input {
-              width: 100px;
-            }
-          }
-        }
-        .inner-flex-box:nth-child(5) {
-          dd {
-            input {
-              width: 100%;
-            }
-          }
-        }
-        .inner-flex-box:nth-child(6) {
-          dd {
-            input {
-              width: 100px;
-            }
-          }
-        }
-        .inner-flex-box:nth-child(7) {
-          dd {
-            input {
-              width: 100%;
-            }
-          }
-        }
-        .inner-flex-box:nth-child(2),
-        .inner-flex-box:nth-child(3),
-        .inner-flex-box:nth-child(4),
-        .inner-flex-box:nth-child(5),
-        .inner-flex-box:nth-child(6),
-        .inner-flex-box:nth-child(7) {
-          display: table;
-        }
-        .inner-flex-box:nth-child(8) {
-          dd {
-            display: flex;
-            align-items: center;
-            column-gap: 8px;
+            width: 400px;
           }
         }
         .submit-btn {
@@ -1831,7 +1742,7 @@ body {
             color: var(--color-accentA);
           }
           img {
-            width: 10px;
+            width: 8px;
           }
         }
       }
@@ -1856,8 +1767,6 @@ body {
               max-width: 1000px;
               margin:0 auto;
               .inner-box1 {
-                display: flex;
-                justify-content: center;
                 /*アコーディオンタイトル*/
                 .title {
                   font-size:1rem;
@@ -1872,14 +1781,6 @@ body {
                 .title.close::before {
                   transform: rotate(45deg);
                   }
-                .down {
-                  width: 16px;
-                  transform: rotate(-180deg);
-                  margin-left: auto;
-                }
-                .down.active {
-                  transform: rotate(0deg);
-                }
               }
                 /*アコーディオンで現れるエリア*/
               .inner-box2 {
@@ -1925,13 +1826,6 @@ body {
                   .title.close::before {
                     transform: rotate(45deg);
                     }
-                  .down {
-                    width: 16px;
-                    transform: rotate(-180deg);
-                  }
-                  .down.active {
-                    transform: rotate(0deg);
-                  }
                   }
                   /*アコーディオンで現れるエリア*/
                 .inner-box2 {
@@ -2097,4 +1991,42 @@ body {
       }
     }
   }
+}
+
+/***************************************************
+ここらかafterのページ
+ **************************************************/
+
+
+.after {
+  .container {
+    padding-top: 200px;
+    height: 80vh;
+    .main-text {
+      text-align: center;
+      letter-spacing: 2px;
+      line-height: 24px;
+    }
+    .back-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 8px;
+      width: fit-content;
+      margin: 0 auto;
+      padding-top: 40px;
+      img {
+        width: 14px;
+      }
+      p {
+        color: var(--color-subtitle-text);
+        font-size: rem(12);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+
 }

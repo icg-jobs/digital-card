@@ -1133,15 +1133,15 @@ body main .order .container .order-text {
   padding-bottom: 40px;
 }
 body main .order .flex-wrapper form .inner-flex-box {
-  width: 100%;
-  display: table;
-  table-layout: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-bottom: 24px;
 }
 body main .order .flex-wrapper form .inner-flex-box dt {
   letter-spacing: 0.125rem;
-  display: table-cell;
   font-size: 0.875rem;
+  padding-bottom: 16px;
 }
 body main .order .flex-wrapper form .inner-flex-box dd {
   margin-left: 0;
@@ -1149,10 +1149,11 @@ body main .order .flex-wrapper form .inner-flex-box dd {
 body main .order .flex-wrapper form .inner-flex-box dd .radio:nth-child(2) {
   margin: 1.5rem 0;
 }
-body main .order .flex-wrapper form .inner-flex-box dd input, body main .order .flex-wrapper form .inner-flex-box dd select {
+body main .order .flex-wrapper form .inner-flex-box dd input {
   border: 0.5px solid #AAAAAA;
   border-radius: 5px;
   padding: 16px;
+  width: 100%;
 }
 body main .order .flex-wrapper form .inner-flex-box dd .name1 {
   margin-bottom: 10px;
@@ -1161,54 +1162,35 @@ body main .order .flex-wrapper form .inner-flex-box dd label {
   line-height: 1.5;
   letter-spacing: 2px;
 }
-body main .order .flex-wrapper form .inner-flex-box dd label a {
-  color: var(--color-accentA);
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(2),
-body main .order .flex-wrapper form .inner-flex-box:nth-child(3),
-body main .order .flex-wrapper form .inner-flex-box:nth-child(4),
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5),
-body main .order .flex-wrapper form .inner-flex-box:nth-child(6),
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) {
-  display: block;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dt,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dt,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dt,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dt,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dt,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dt {
-  padding-bottom: 16px;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd {
-  width: 100%;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
-  width: 100%;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd {
-  width: 100vw;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input,
-body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input {
-  width: 100px;
-}
-body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd {
+body main .order .flex-wrapper form .contents-box {
   display: flex;
-  align-items: center;
-  -moz-column-gap: 8px;
-       column-gap: 8px;
+  padding-bottom: 24px;
+  justify-content: space-between;
+  align-items: flex-start;
+  letter-spacing: 0.125rem;
+  font-size: 0.875rem;
+}
+body main .order .flex-wrapper form .contents-box textarea {
+  border: 0.5px solid #AAAAAA;
+  border-radius: 5px;
+  padding: 16px;
+  height: 160px;
+}
+body main .order .flex-wrapper form .privacy-box {
+  display: flex;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  padding-bottom: 24px;
+  letter-spacing: 0.125rem;
+  font-size: 0.75rem;
+}
+body main .order .flex-wrapper form .privacy-box input {
+  border: 0.5px solid #AAAAAA;
+  border-radius: 5px;
+  padding: 16px;
+}
+body main .order .flex-wrapper form .privacy-box a {
+  color: var(--color-accentA);
 }
 body main .order .flex-wrapper form .submit-btn {
   margin: 0 auto 64px auto;
@@ -1222,10 +1204,10 @@ body main .order .flex-wrapper form .submit-btn {
   width: fit-content;
   box-shadow: 0px 2px 4px 0px rgba(15, 12, 12, 0.25);
 }
-body main .order .flex-wrapper form .submit-btn input {
+body main .order .flex-wrapper form .submit-btn button {
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.625rem;
+  letter-spacing: 0.125rem;
   color: var(--color-accentA);
 }
 body main .order .flex-wrapper form .submit-btn img {
@@ -1264,16 +1246,8 @@ body main .question .container .read-more .txt-show .accordion-area li .flex-wra
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  padding: 16px 24px;
+  padding: 32px 24px;
   letter-spacing: 2px;
-}
-body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box1 .down {
-  width: 16px;
-  transform: rotate(-180deg);
-  margin-left: auto;
-}
-body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box1 .down.active {
-  transform: rotate(0deg);
 }
 body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box2 {
   display: flex;
@@ -1317,14 +1291,6 @@ body main .question .container .read-more .txt-hide .accordion-area li .flex-wra
   font-weight: 500;
   padding: 16px 24px;
   letter-spacing: 2px;
-}
-body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box1 .down {
-  width: 16px;
-  transform: rotate(-180deg);
-  margin-left: auto;
-}
-body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box1 .down.active {
-  transform: rotate(0deg);
 }
 body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box2 {
   display: flex;
@@ -2021,86 +1987,41 @@ body footer .container small {
     max-width: 1290px;
   }
   body main .order .flex-wrapper form .inner-flex-box {
-    display: table;
-    table-layout: fixed;
     padding-bottom: 40px;
-    width: 100%;
-    white-space: nowrap;
   }
   body main .order .flex-wrapper form .inner-flex-box dt {
     font-size: 1.125rem;
-    width: 40%;
-    padding-right: 40px;
+    letter-spacing: 0.125rem;
   }
   body main .order .flex-wrapper form .inner-flex-box dd {
-    width: 60%;
+    width: 400px;
   }
-  body main .order .flex-wrapper form .inner-flex-box dd input, body main .order .flex-wrapper form .inner-flex-box dd select {
+  body main .order .flex-wrapper form .inner-flex-box dd label {
+    font-weight: 500;
+  }
+  body main .order .flex-wrapper form .inner-flex-box dd label a {
+    color: var(--color-accentA);
+  }
+  body main .order .flex-wrapper form .contents-box {
+    padding-bottom: 40px;
+    font-size: 1.125rem;
+  }
+  body main .order .flex-wrapper form .contents-box dd {
+    width: 400px;
+  }
+  body main .order .flex-wrapper form .contents-box dd textarea {
+    width: 100%;
     border: 0.5px solid #AAAAAA;
     border-radius: 5px;
     padding: 16px 24px;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(1) {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  body main .order .flex-wrapper form .privacy-box {
+    justify-content: space-between;
+    padding-bottom: 40px;
+    font-size: 1.125rem;
   }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dt {
-    letter-spacing: 0.125rem;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd {
-    display: flex;
-    justify-content: flex-start;
-    -moz-column-gap: 80px;
-         column-gap: 80px;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd .radio {
-    margin: 0;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd label {
-    font-weight: 500;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(1) dd label a {
-    color: var(--color-accentA);
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(2) dd input {
-    width: 100%;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd {
-    display: initial;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd input {
-    width: 40%;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(3) dd .name1 {
-    margin-bottom: 0;
-    margin-right: 16px;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(4) dd input {
-    width: 100px;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(5) dd input {
-    width: 100%;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(6) dd input {
-    width: 100px;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(7) dd input {
-    width: 100%;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(2),
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(3),
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(4),
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(5),
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(6),
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(7) {
-    display: table;
-  }
-  body main .order .flex-wrapper form .inner-flex-box:nth-child(8) dd {
-    display: flex;
-    align-items: center;
-    -moz-column-gap: 8px;
-         column-gap: 8px;
+  body main .order .flex-wrapper form .privacy-box dd {
+    width: 400px;
   }
   body main .order .flex-wrapper form .submit-btn {
     padding: 16px 24px;
@@ -2114,7 +2035,7 @@ body footer .container small {
     color: var(--color-accentA);
   }
   body main .order .flex-wrapper form .submit-btn img {
-    width: 10px;
+    width: 8px;
   }
   body main .question {
     background-color: var(--color-back);
@@ -2141,8 +2062,6 @@ body footer .container small {
     /*アコーディオンで現れるエリア*/
   }
   body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box1 {
-    display: flex;
-    justify-content: center;
     /*アコーディオンタイトル*/
     /*　closeというクラスがついたら形状変化　*/
   }
@@ -2157,14 +2076,6 @@ body footer .container small {
   }
   body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box1 .title.close::before {
     transform: rotate(45deg);
-  }
-  body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box1 .down {
-    width: 16px;
-    transform: rotate(-180deg);
-    margin-left: auto;
-  }
-  body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box1 .down.active {
-    transform: rotate(0deg);
   }
   body main .question .container .read-more .txt-show .accordion-area li .flex-wrapper .inner-box2 {
     display: flex; /*はじめは非表示*/
@@ -2207,13 +2118,6 @@ body footer .container small {
   }
   body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box1 .title.close::before {
     transform: rotate(45deg);
-  }
-  body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box1 .down {
-    width: 16px;
-    transform: rotate(-180deg);
-  }
-  body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box1 .down.active {
-    transform: rotate(0deg);
   }
   body main .question .container .read-more .txt-hide .accordion-area li .flex-wrapper .inner-box2 {
     display: flex; /*はじめは非表示*/
@@ -2359,4 +2263,35 @@ body footer .container small {
   .privacy .container .back-btn a p {
     font-size: 0.875rem;
   }
+}
+/***************************************************
+ここらかafterのページ
+ **************************************************/
+.after .container {
+  padding-top: 200px;
+  height: 80vh;
+}
+.after .container .main-text {
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 24px;
+}
+.after .container .back-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.after .container .back-btn a img {
+  width: 14px;
+}
+.after .container .back-btn a p {
+  color: var(--color-subtitle-text);
+  font-size: 0.75rem;
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */

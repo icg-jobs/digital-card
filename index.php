@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script> 
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </head>
 <body id="top">
     <header>
@@ -627,7 +627,7 @@
                 <div class="shape3"></div>
                 <div class="shape4"></div>
                 <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">
-                    カザスト 5つの特徴</span></span></h2>
+                    カザスト5つの特徴</span></span></h2>
                 <div class="sub-container">
                     <div class="pc-wrapper2 sub">
                         <img src="img/feature0.png" class="feature2" alt="特徴のイメージ画像0">
@@ -914,7 +914,7 @@
                                 <div class="flex-wrapper">
                                     <div class="inner-box1">
                                         <img src="img/Q.svg" alt="Qアイコン">
-                                        <p class="title">URLは何個まで登録可能ですか</p>
+                                        <p class="title">URLは何個まで登録可能ですか。</p>
                                     </div>
                                     <div class="inner-box2">
                                         <img src="img/A.svg" alt="Aアイコン">
