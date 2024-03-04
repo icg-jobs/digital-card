@@ -861,14 +861,18 @@ body {
           padding-bottom: 24px; 
           letter-spacing: rem(2);
           font-size: rem(12);
-          input {
-            border: .5px solid #AAAAAA;
-            border-radius: 5px;
-            padding: 16px;
+          dd {
+            display: flex;
+            column-gap: 10px;
+              input {
+                border: .5px solid #AAAAAA;
+                border-radius: 5px;
+                padding: 16px;
+              }
+              a {
+                color: var(--color-accentA);
+            }
           }
-          a {
-            color: var(--color-accentA);
-        }
         }
         .submit-btn {
           margin: 0 auto 64px auto;

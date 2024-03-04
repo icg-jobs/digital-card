@@ -1184,12 +1184,17 @@ body main .order .flex-wrapper form .privacy-box {
   letter-spacing: 0.125rem;
   font-size: 0.75rem;
 }
-body main .order .flex-wrapper form .privacy-box input {
+body main .order .flex-wrapper form .privacy-box dd {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+body main .order .flex-wrapper form .privacy-box dd input {
   border: 0.5px solid #AAAAAA;
   border-radius: 5px;
   padding: 16px;
 }
-body main .order .flex-wrapper form .privacy-box a {
+body main .order .flex-wrapper form .privacy-box dd a {
   color: var(--color-accentA);
 }
 body main .order .flex-wrapper form .submit-btn {

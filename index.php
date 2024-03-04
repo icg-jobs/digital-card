@@ -876,10 +876,10 @@
                             </dd>
                         </dl>
                         <dl class="privacy-box">
-                            <dt>個人情報の取扱い</dt>
+                            <dt><label for="checkbox">個人情報の取扱い</label></dt>
                             <dd>
                                 <input type="checkbox" name="entry.1592514905" id="checkbox" required>
-                                <label for="checkbox"><a href="privacy.html">個人情報の取扱い</a>について同意する</label>
+                                <p><a href="privacy.html">個人情報の取扱い</a>について同意する</p>
                             </dd>
                         </dl>
                         <div class="submit-btn">
