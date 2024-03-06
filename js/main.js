@@ -77,6 +77,35 @@ $(window).scroll(function (){
 
 
 
+//====グーグルフォーム===
+
+// document.getElementById("contactForm").addEventListener("submit", function(event) {
+//     event.preventDefault(); // デフォルトのフォーム送信を防止
+
+//     // フォームデータを取得
+//     var formData = new FormData(this);
+
+//     // Google フォームのエンドポイント
+//     var googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScN8BYxILU0F3P1x3TooZCYslWIhKvRiEqfhqbDQ3W_2JxdOA/formResponse"; // ここに Google フォームのエンドポイントURLを入力
+
+//     // Google フォームにデータを送信
+//     fetch(googleFormUrl, {
+//         method: "POST",
+//         body: formData,
+//         mode: "no-cors" // クロスオリジン制約を回避
+//     })
+//     .then(function(response) {
+//         // 送信が成功したら、成功メッセージを表示するなどの処理を行う
+//         console.log("送信成功");
+//     })
+//     .catch(function(error) {
+//         // エラーが発生した場合の処理
+//         console.error("送信エラー:", error);
+//     });
+// });
+
+
+
 // アコーディオン
 $(function(){
     $(".more").on("click", function() {

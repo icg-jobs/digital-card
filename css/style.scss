@@ -1579,9 +1579,19 @@ body {
         align-items: center;
         justify-content: space-between;
         padding-bottom: 128px;
-        column-gap: 100px;
+        column-gap: 140px;
         max-width: 1000px;
         margin: 0 auto;
+        .about1,.about2,.about3 {
+          width: 100%;
+          max-width: 320px;
+          mix-blend-mode: multiply;
+        }
+        .about3 {
+          width: 100%;
+          max-width: 320px;
+          mix-blend-mode: normal;
+        }
         .inner-flex-box {
           .inner-icon {
             display: flex;
@@ -1614,21 +1624,11 @@ body {
             text-align: left;
           }
         }
-        img {
-          width: 100%;
-          max-width: 320px;
-          mix-blend-mode: multiply;
-        }
       }
       .flex-wrapper:last-child {
         padding: 0;
-        .inner-flex-box {
+        .text-box {
           .inner-icon {
-            img {
-              width: 100%;
-              max-width: 540px;
-              padding-bottom: 0;
-            }
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -1643,38 +1643,20 @@ body {
               letter-spacing: 60px;
             }
           }
-        }
-        img {
-          width: 100%;
-          max-width: 540px;
-          padding-bottom: 0;
-        }
-        .text-box {
-          p {
-            color: var(--color-inner-text);
-            font-size: rem(18);
-            font-weight: 600;
-            letter-spacing: rem(1);
-            line-height: 2;
-            text-align: left;
-            padding-bottom: 40px;
-          }
           .inner-text-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             p {
-              text-align: center;
+              color: var(--color-subtitle-text);
+              font-size: rem(76);
               font-weight: 600;
-              letter-spacing: rem(4);
+              letter-spacing: 0.0625rem;
+              text-align: left;
+              padding-bottom: 40px;
             }
-            span:first-child {
-              font-size: rem(40);
-              font-weight: 600;
-            }
-            span:last-child {
-              font-size: rem(60);
-              font-weight: 800;
+            .comment{
+              color: var(--color-inner-text);
+              font-size: rem(14);
+              font-weight: 400;
+              line-height: 2rem;
             }
           }
         }

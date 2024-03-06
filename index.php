@@ -802,7 +802,7 @@
                             飲食店／美容師／インフルエンサー<br>
                             営業マン／ショップ店員／接客業</span></span></p>
                     </div>
-                    <img src="img/about1.png" alt="様々な職業のイラスト">
+                    <img src="img/about1.png" class="about1" alt="様々な職業のイラスト">
                 </div>
                 <div class="flex-wrapper">
                     <div class="inner-flex-box">
@@ -815,23 +815,27 @@
                             カバーの素材や保護フィルムの種類によっては読み取りにくい場合がございます。<br>
                             解決方法はWebサイト内「カードが読み取れない場合」をご確認ください。</span></span></p>
                     </div>
-                    <img src="img/about2.png" alt="様々な職業のスマホ">
+                    <img src="img/about2.png" class="about2" alt="様々な職業のスマホ">
                 </div>
                 <div class="flex-wrapper">
-                    <div class="inner-flex-box">
+                    <div class="text-box">
                         <div class="inner-icon">
                             <img src="img/about-icon.svg" alt="円形のアイコン">
                             <h3>価格</h3>
                         </div>
-                        <img src="img/about3.png" alt="オリジナルカードのデザイン例" class="card animation">
+                        <span class="slide-in downAnime"><span class="slide-in_inner downAnimeInner">
+                            <div class="inner-text-box">
+                                <p>¥5,400〜</p>
+                                <p class="comment">
+                                    ※表示価格は、21枚以上ご注文をいただいた場合の１枚あたりの価格です。<br>
+                                    ※価格は全て税込み価格です。<br>
+                                    ※初めてのご利用には、別途初期費用が必要です。
+                                </p>
+                            </div>
+                        </span></span>
                     </div>
-                    <div class="text-box"><span class="slide-in downAnime"><span class="slide-in_inner downAnimeInner">
-                        <p>20枚〜のご注文をいただくと<br>
-                            オリジナルデザイン制作を承ります。</p>
-                        <div class="inner-text-box">
-                            <p><span>1</span>枚
-                            ¥<span>0,000</span>税込</p></span></span>
-                        </div>
+                    <div class="inner-flex-box">
+                        <img src="img/card_group1.png" class="about3" alt="オリジナルカードのデザイン例">
                     </div>
                 </div>
             </div>
@@ -843,8 +847,9 @@
                 <p class="order-text">お問い合わせ内容を確認後、ご記入いただいた電話番号へ<br>
                     弊社の担当者よりご連絡いたします。どうぞお気軽にお問い合わせください。<br>
                     ※全て入力必須項目です。お手数ですがご記入お願いします。</p>
-                <div class="flex-wrapper">
-                <form method="post" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScN8BYxILU0F3P1x3TooZCYslWIhKvRiEqfhqbDQ3W_2JxdOA/formResponse"method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScN8BYxILU0F3P1x3TooZCYslWIhKvRiEqfhqbDQ3W_2JxdOA/viewform?embedded=true" width="100%" height="800px" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                <!-- <div class="flex-wrapper">
+                    <form id="contactForm" method="post" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScN8BYxILU0F3P1x3TooZCYslWIhKvRiEqfhqbDQ3W_2JxdOA/formResponse" target="to_success" onsubmit="submitted=true;">
                         <dl class="inner-flex-box">
                             <dt><label class="inner-ttl" for="company">御社名</label></dt>
                             <dd>
@@ -876,19 +881,18 @@
                             </dd>
                         </dl>
                         <dl class="privacy-box">
-                            <dt><label for="checkbox">個人情報の取扱い</label></dt>
+                            <dt><label for="check">個人情報の取扱い</label></dt>
                             <dd>
-                                <input type="checkbox" name="entry.1592514905" id="checkbox" required>
+                                <input type="checkbox" name="entry.1592514905" id="check" required>
                                 <p><a href="privacy.html">個人情報の取扱い</a>について同意する</p>
                             </dd>
                         </dl>
                         <div class="submit-btn">
-                            <!-- <input type="submit" value="送信" class="button"> -->
-                            <button type="submit" value="submit" class="button">送　信</button>
+                            <button type="submit" value="submit" class="button">送信</button>
                             <img src="img/login_right.svg" alt="右向き矢印">
                         </div>
                     </form>
-                </div>
+                </div> -->
             </div>
         </section>
         <section class="question" id="question">
@@ -1098,5 +1102,4 @@
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="js/main.js"></script>
 <script type="text/javascript">var submitted = false;</script>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='after.html';}"></iframe>
 </html>

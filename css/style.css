@@ -1878,10 +1878,20 @@ body footer .container small {
     align-items: center;
     justify-content: space-between;
     padding-bottom: 128px;
-    -moz-column-gap: 100px;
-         column-gap: 100px;
+    -moz-column-gap: 140px;
+         column-gap: 140px;
     max-width: 1000px;
     margin: 0 auto;
+  }
+  body main .about .container-pc .flex-wrapper .about1, body main .about .container-pc .flex-wrapper .about2, body main .about .container-pc .flex-wrapper .about3 {
+    width: 100%;
+    max-width: 320px;
+    mix-blend-mode: multiply;
+  }
+  body main .about .container-pc .flex-wrapper .about3 {
+    width: 100%;
+    max-width: 320px;
+    mix-blend-mode: normal;
   }
   body main .about .container-pc .flex-wrapper .inner-flex-box .inner-icon {
     display: flex;
@@ -1914,15 +1924,10 @@ body footer .container small {
     line-height: 2.5rem;
     text-align: left;
   }
-  body main .about .container-pc .flex-wrapper img {
-    width: 100%;
-    max-width: 320px;
-    mix-blend-mode: multiply;
-  }
   body main .about .container-pc .flex-wrapper:last-child {
     padding: 0;
   }
-  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon {
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-icon {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -1930,50 +1935,27 @@ body footer .container small {
          column-gap: 24px;
     padding-bottom: 40px;
   }
-  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon img {
-    width: 100%;
-    max-width: 540px;
-    padding-bottom: 0;
-  }
-  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon img {
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-icon img {
     width: 50px;
     margin: 0;
     padding: 0;
   }
-  body main .about .container-pc .flex-wrapper:last-child .inner-flex-box .inner-icon h3 {
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-icon h3 {
     letter-spacing: 60px;
   }
-  body main .about .container-pc .flex-wrapper:last-child img {
-    width: 100%;
-    max-width: 540px;
-    padding-bottom: 0;
-  }
-  body main .about .container-pc .flex-wrapper:last-child .text-box p {
-    color: var(--color-inner-text);
-    font-size: 1.125rem;
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box p {
+    color: var(--color-subtitle-text);
+    font-size: 4.75rem;
     font-weight: 600;
     letter-spacing: 0.0625rem;
-    line-height: 2;
     text-align: left;
     padding-bottom: 40px;
   }
-  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box p {
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 0.25rem;
-  }
-  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box span:first-child {
-    font-size: 2.5rem;
-    font-weight: 600;
-  }
-  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box span:last-child {
-    font-size: 3.75rem;
-    font-weight: 800;
+  body main .about .container-pc .flex-wrapper:last-child .text-box .inner-text-box .comment {
+    color: var(--color-inner-text);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 2rem;
   }
   body main .order .container {
     background-image: url(../img/Order.svg);
